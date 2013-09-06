@@ -1,0 +1,41 @@
+
+// ------------------------------------------------------------------------------------------------------
+// MAIN IMPORTS & VARIABLES
+
+@import "utilities/shared";
+@import "utilities/reset";
+@import "utilities/grid-system";
+
+@include global-reset;
+
+$font-family: Arial, sans-serif;
+$text-color: #000;
+$background-color: #FFF;
+
+// ------------------------------------------------------------------------------------------------------
+// GLOBAL PAGE STYLES
+
+html {
+    -webkit-text-size-adjust: none; // fix for font-size adjustment on iphone
+}
+
+body {
+    font-family: $font-family;
+    font-weight: normal;
+    color: $text-color;
+    background: $background-color;
+    margin: 0; padding: 0;
+}
+
+// ------------------------------------------------------------------------------------------------------
+// MEDIA QUERIES AND LAYOUTS
+
+@import "media/00-default";
+@import "media/01-handheld";
+@import "media/02-handheld-landscape";
+@import "media/03-tablet";
+@import "media/04-large";
+@import "media/05-massive";
+@import "media/06-hi-res";
+
+@import "layouts";

@@ -1,0 +1,156 @@
+
+// ------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+
+@function elements-of-type($type, $class:false) {
+    @if $class != false {
+        $class: ".#{$class}";
+    } @else {
+        $class: "";
+    }
+    @if $type == block {
+        @return "address#{$class}, article#{$class}, aside#{$class}, blockquote#{$class}, center#{$class}, dir#{$class}, div#{$class}, dd#{$class}, details#{$class}, dl#{$class}, dt#{$class}, fieldset#{$class}, figcaption#{$class}, figure#{$class}, form#{$class}, footer#{$class}, frameset#{$class}, h1#{$class}, h2#{$class}, h3#{$class}, h4#{$class}, h5#{$class}, h6#{$class}, hr#{$class}, header#{$class}, hgroup#{$class}, isindex#{$class}, menu#{$class}, nav#{$class}, noframes#{$class}, noscript#{$class}, ol#{$class}, p#{$class}, pre#{$class}, section#{$class}, summary#{$class}, ul#{$class}";
+    }
+    @if $type == inline {
+        @return "a#{$class}, abbr#{$class}, acronym#{$class}, audio#{$class}, b#{$class}, basefont#{$class}, bdo#{$class}, big#{$class}, br#{$class}, canvas#{$class}, cite#{$class}, code#{$class}, command#{$class}, datalist#{$class}, dfn#{$class}, em#{$class}, embed#{$class}, font#{$class}, i#{$class}, img#{$class}, input#{$class}, keygen#{$class}, kbd#{$class}, label#{$class}, mark#{$class}, meter#{$class}, output#{$class}, progress#{$class}, q#{$class}, rp#{$class}, rt#{$class}, ruby#{$class}, s#{$class}, samp#{$class}, select#{$class}, small#{$class}, span#{$class}, strike#{$class}, strong#{$class}, sub#{$class}, sup#{$class}, textarea#{$class}, time#{$class}, tt#{$class}, u#{$class}, var#{$class}, video#{$class}, wbr#{$class}";
+    }
+    @if $type == inline-block {
+        @return "img#{$class}";
+    }
+    @if $type == list-item {
+        @return "li#{$class}";
+    }
+    @if $type == table-row-group {
+        @return "tbody#{$class}";
+    }
+    @if $type == table-header-group {
+        @return "thead#{$class}";
+    }
+    @if $type == table-footer-group {
+        @return "tfoot#{$class}";
+    }
+    @if $type == table-row {
+        @return "tr#{$class}";
+    }
+    @if $type == table-cell {
+        @return "th#{$class}, td#{$class}";
+    }
+    @if $type == html5-block {
+        @return "article#{$class}, aside#{$class}, details#{$class}, figcaption#{$class}, figure#{$class}, footer#{$class}, header#{$class}, hgroup#{$class}, menu#{$class}, nav#{$class}, section#{$class}, summary#{$class}";
+    }
+    @if $type == html5-inline {
+        @return "audio#{$class}, canvas#{$class}, command#{$class}, datalist#{$class}, embed#{$class}, keygen#{$class}, mark#{$class}, meter#{$class}, output#{$class}, progress#{$class}, rp#{$class}, rt#{$class}, ruby#{$class}, time#{$class}, video#{$class}, wbr#{$class}";
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------
+// MIXINS
+
+@mixin show-hide-classes($base-class, $hide-default: true) {
+    
+    @if $hide-default == true {
+        .#{$default-class}-show,
+        .#{$default-class}-show-inline,
+        .#{$default-class}-show-inline-block { display: none !important; }
+    }
+    
+    // show classes
+    .#{$base-class}-show { display: block !important; }
+    .#{$base-class}-show-inline { display: inline !important; }
+    .#{$base-class}-show-inline-block { display: inline-block !important; }
+    
+    // hide classes
+    .#{$base-class}-hide,
+    .#{$base-class}-hide-inline,
+    .#{$base-class}-hide-inline-block { display: none !important; }
+    
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin box-sizing($value) {
+    -webkit-box-sizing: $value; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: $value;    /* Firefox, other Gecko */
+    box-sizing: $value;         /* Opera/IE 8+ */
+}
+
+@mixin gradient-bg($from, $to) {
+    background-color: $to;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background-image: -webkit-linear-gradient(top, $from, $to);
+    background-image:    -moz-linear-gradient(top, $from, $to);
+    background-image:      -o-linear-gradient(top, $from, $to);
+    background-image:         linear-gradient(to bottom, $from, $to);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='{$from}', EndColorStr='{$to}', GradientType=0);
+    zoom: 1;
+}
+
+@mixin box-shadow($shad) {
+    -moz-box-shadow:   $shad;
+    -webkit-box-shadow: $shad;
+    box-shadow:         $shad;
+}
+
+@mixin rotated-text($radius: 200px, $num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg, $letter-padding: 0px) {
+    $angle-per-char: $angle-span / $num-letters;
+    
+    b {
+        display: inline-block;
+        transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+        -webkit-transform-origin: bottom center;
+        height: $radius;
+        padding: 0 $letter-padding;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    @for $i from 1 through $num-letters {
+        .ch#{$i} {
+            $c-angle: $angle-offset + $angle-per-char * $i;
+            transform: rotate(#{$c-angle}deg);
+            -ms-transform: rotate(#{$c-angle}deg);
+            -webkit-transform: rotate(#{$c-angle}deg);
+        }
+    }
+}
+
+@mixin transform($transform) {
+    transform: $transform;
+    -ms-transform: $transform;
+    -webkit-transform: $transform;
+}
+
+@mixin placeholder-color($color) {
+    &::-webkit-input-placeholder { color:$color; }
+    &::-moz-placeholder { color:$color; } /* firefox 19+ */
+    &:-ms-input-placeholder { color:$color; } /* ie */
+    &:-moz-placeholder { color:$color; }
+    &.placeholder { color:$color; }
+}
+
+// ------------------------------------------------------------------------------------------------------
+// GLOBAL / EXTENDABLE CLASSES
+
+// show all the hide-classes
+*[class$="hide"] { display: block !important; }
+*[class$="hide-inline"] { display: inline !important; }
+*[class$="hide-inline-block"] { display: inline-block !important; }
+
+// hide all the show-classes
+*[class$="show"],
+*[class$="show-inline"],
+*[class$="show-inline-block"] {
+    display: none !important;
+}
+
+.block-input {
+    display: block;
+    width: 100%;
+    @include box-sizing(border-box);
+}

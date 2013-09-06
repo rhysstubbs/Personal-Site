@@ -1,0 +1,245 @@
+// **************************************************
+//
+// MUELLER
+// modular grid system
+//
+// _grid_system.scss
+//
+// the grid implementation
+//
+// **************************************************
+
+// **************************************************
+// IMPORTS & VARIABLES
+
+@import "utilities/clearfix";
+
+$float-direction: left;
+$show-grid-background: false;
+
+// **************************************************
+// GENERAL MIXINS
+
+@mixin centered {
+    margin: 0 auto;
+}
+
+@mixin floated($side: $float-direction) {
+    float: $side; display: inline;
+}
+
+// **************************************************
+// THE GRID SYSTEM
+
+// The width of a column given the units and unit width of the grid.
+@function column-width($n, $col-width, $gutter-width: $gutter-width) {
+    @if unit($col-width) == "%" {
+        $width: $col-width * $n + $gutter-width * ($n - 1);
+    } @else {
+        $width: $col-width * $n + $gutter-width * ($n - 1);
+    }
+    @return $width;
+}
+
+@mixin outer {
+    @include centered;
+    @include legacy-pie-clearfix;
+}
+
+// A grid container. Unlike most grid containers,
+// this one does not have a width. That is assigned
+// on a per-media basis.
+@mixin container($margin-left: false, $margin-right: false, $width: false) {
+    @include legacy-pie-clearfix;
+    @if $width {
+        width: $width;
+    }
+    @if $margin-left {
+        margin-left: $margin-left;
+    }
+    @if $margin-right {
+        margin-right: $margin-right;
+    }
+}
+
+// The basic structure for a column aligned to a grid.
+@mixin column-base {
+    @include floated; // make this column floated to the left
+    @include legacy-pie-clearfix;
+}
+
+// Generates the base classes needed for a grid system
+@mixin grid-base($gutter-width, $base-class: grid-column, $first-column-class: g-all-f, $last-column-class: g-all-l) {
+    .#{$base-class} {
+        @include column-base;
+    }
+    .#{$first-column-class} {
+        margin-left: 0 !important;
+        margin-right: $gutter-width !important; // needed to overwrite last with first
+        clear: left;
+    }
+    .#{$last-column-class} {
+        margin-right: 0 !important;
+    }
+}
+
+// add $n grid units worth of space to the left of a column
+@mixin prepend($n, $col-width, $gutter-width) {
+    padding-left: column-width($n, $col-width, $gutter-width) + $gutter-width !important;
+}
+
+// add $n grid units worth of space to the left of a column
+@mixin append($n, $col-width, $gutter-width) {
+    padding-right: column-width($n, $col-width, $gutter-width) + $gutter-width !important;
+}
+
+@mixin push($n, $col-width, $gutter-width) {
+    position: relative;
+    margin-left: $n*($col-width+$gutter-width) !important;
+    margin-right: -$n*($col-width+$gutter-width) !important;
+    margin-top: 0; margin-bottom: 0;
+}
+
+// add $n grid units worth of space to the left of a column
+@mixin pull($n, $col-width, $gutter-width) {
+    position: relative;
+    margin-left: -$n*($col-width+$gutter-width) + $gutter-width !important;
+}
+
+// Made for extending when creating the *-r columns
+.pull-right {
+    float: right !important;
+}
+
+// The column mixin can be used in two different ways.
+// Where base classes are provided they are extended to
+// produce less css output. When not provided this
+// mixin produces output generally equivalent to the
+// blueprint column mixin.
+@mixin column($n, $max-unit, $col-width, $gutter-width, $base-class: false, $first-column-class: false, $last-column-class: false) {
+    @if $base-class {
+        @extend .#{$base-class};
+    } @else {
+        @include column-base;
+    }
+    margin-left: $gutter-width / 2;
+    margin-right: $gutter-width / 2;
+    //margin-bottom: rhythm(1, $base-font-size);
+    @if $n != $max-unit {
+        width: column-width($n, $col-width, $gutter-width);
+    } @else {
+        float: none;
+        display: block;
+        width: auto;
+    }
+}
+
+// Generate grid classes according to a common naming convention
+// $media is the media prefix. E.g. d (deskotop), t (tablet), tp (tablet portrait), h (handheld), or hl (handheld landscape)
+// $max-unit is how many columns are in this grid system.
+// $col-width is the width of a column.
+// $gutter-width is the width of a gutter (margin-right).
+// The column base class and gutter removal class names are derived
+// from the prefix, but can be overridden.
+@mixin grids($media, $units, $max-unit, $col-width, $gutter-width,
+            $pad-units: 0 1 2 3 4 5 6 7 8 0 10 11 12,
+            $base-class: "#{$media}",
+            $first-column-class: "#{$media}-f",
+            $last-column-class: "#{$media}-l") {
+    
+    $container-width: $col-width*$max-unit+$gutter-width*($max-unit - 1);
+    $container-width-nopad: $col-width*$max-unit+$gutter-width*$max-unit;
+    
+    $is-static: unit($col-width) == "px" and unit($gutter-width) == "px";
+    $fluid-col-width: percentage($col-width / $container-width-nopad);
+    $fluid-gutter-width: percentage($gutter-width / $container-width-nopad);
+    
+    @if !$is-static {
+        $col-width: $fluid-col-width;
+        $gutter-width: $fluid-gutter-width;
+        
+        .outer {
+            padding-left: $gutter-width !important;
+            padding-right: $gutter-width !important;
+        }
+    }
+    
+    // The main wrap around the site
+    .wrap {
+        @include outer;
+        width: $container-width;
+    }
+    
+    // The containers for any grids (fixed or fluid), with the appropriate negative margins
+    .#{$media}-c, .c {
+        @include container(-$gutter-width/2, -$gutter-width/2);
+    }
+    
+    .#{$media}-c-f, .c-f {
+        @include container(-$fluid-gutter-width/2, -$fluid-gutter-width/2);
+    }
+    
+    // Establish the base classes
+    @include grid-base($gutter-width, $base-class, $first-column-class, $last-column-class);
+    
+    // Generate padding classes
+    @each $n in $pad-units {
+        .#{$media}-prepend#{$n} {
+            @include prepend($n, $col-width, $gutter-width);
+        }
+        .#{$media}-append#{$n} {
+            @include append($n, $col-width, $gutter-width);
+        }
+        .#{$media}-push#{$n} {
+            @include push($n, $col-width, $gutter-width);
+        }
+        .#{$media}-pull#{$n} {
+            @include pull($n, $col-width, $gutter-width);
+        }
+    }
+    
+    // Generate grid classes
+    @each $n in $units {
+        .#{$media}-#{$n} {
+            @include column($n, $max-unit, $col-width, $gutter-width, $base-class, $first-column-class, $last-column-class);
+        }
+        .#{$media}-#{$n}-f {
+            @include column($n, $max-unit, $fluid-col-width, $fluid-gutter-width, $base-class, $first-column-class, $last-column-class);
+        }
+        .#{$media}-#{$n}-r {
+            @extend .#{$media}-#{$n};
+            float: right;
+            //@extend .pull-right;
+        }
+        .#{$media}-#{$n}-f-r {
+            @extend .#{$media}-#{$n}-f;
+            float: right;
+            //@extend .pull-right;
+        }
+    }
+    
+    // Stuff that clears...
+    @if $media != $default-class {
+        
+        .#{$default-class}-clear {
+            clear: none !important;
+        }
+        
+    }
+    
+    .#{$media}-clear {
+        clear: both !important;
+    }
+     
+    // Stuff that stacks...
+    .#{$media}-stack-c > .col, .#{$media}-stack {
+        display: block !important;
+        clear: both !important;
+        width: auto !important;
+        float: none !important;
+    }
+    
+    // classes to show and hide elements for this media
+    @include show-hide-classes($media);
+    
+}
