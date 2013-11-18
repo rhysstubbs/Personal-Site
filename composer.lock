@@ -446,12 +446,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "d79ce18e3ab6d3ebe0d8c026d38b8b7d8b80a6ce"
+                "reference": "5fdedc4f8f304e8035580807bd36d59e97a87265"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/d79ce18e3ab6d3ebe0d8c026d38b8b7d8b80a6ce",
-                "reference": "d79ce18e3ab6d3ebe0d8c026d38b8b7d8b80a6ce",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/5fdedc4f8f304e8035580807bd36d59e97a87265",
+                "reference": "5fdedc4f8f304e8035580807bd36d59e97a87265",
                 "shasum": ""
             },
             "require": {
@@ -509,7 +509,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-11-04 10:59:42"
+            "time": "2013-11-15 14:43:05"
         },
         {
             "name": "doctrine/inflector",
@@ -642,12 +642,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "c7d40772199eb61b7d1aab339c75d291947432b9"
+                "reference": "3529cd4282b3966707f4a5dc67a992fba6c687dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/c7d40772199eb61b7d1aab339c75d291947432b9",
-                "reference": "c7d40772199eb61b7d1aab339c75d291947432b9",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/3529cd4282b3966707f4a5dc67a992fba6c687dd",
+                "reference": "3529cd4282b3966707f4a5dc67a992fba6c687dd",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +710,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-11-04 15:46:42"
+            "time": "2013-11-16 18:52:09"
         },
         {
             "name": "fuelphp/upload",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "7f7b49f01093e10f0af99be3296a4d71b4058128"
+                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/7f7b49f01093e10f0af99be3296a4d71b4058128",
-                "reference": "7f7b49f01093e10f0af99be3296a4d71b4058128",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/1b940f2069fb897df61fb55d96d508db3851ced3",
+                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3",
                 "shasum": ""
             },
             "require": {
@@ -834,7 +834,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2013-11-03 12:09:29"
+            "time": "2013-11-17 16:47:29"
         },
         {
             "name": "hautelook/phpass",
@@ -1070,12 +1070,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrclay/minify.git",
-                "reference": "94d2596a5730db509eddcec92fcf67b6139bbdc7"
+                "reference": "f8b62b358b53eb4d30eeda1abc125097221d2193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrclay/minify/zipball/94d2596a5730db509eddcec92fcf67b6139bbdc7",
-                "reference": "94d2596a5730db509eddcec92fcf67b6139bbdc7",
+                "url": "https://api.github.com/repos/mrclay/minify/zipball/f8b62b358b53eb4d30eeda1abc125097221d2193",
+                "reference": "f8b62b358b53eb4d30eeda1abc125097221d2193",
                 "shasum": ""
             },
             "require": {
@@ -1102,7 +1102,7 @@
             ],
             "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
             "homepage": "http://code.google.com/p/minify/",
-            "time": "2013-09-26 13:10:32"
+            "time": "2013-11-14 01:37:44"
         },
         {
             "name": "psr/log",
@@ -1192,12 +1192,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/soundintheory/fuel-cmf.git",
-                "reference": "275e4c9018a764ec7c618bcc7f7912b2334bbd99"
+                "reference": "def7b182381bb772ed8ab99924d7b47d4031004e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/soundintheory/fuel-cmf/zipball/275e4c9018a764ec7c618bcc7f7912b2334bbd99",
-                "reference": "275e4c9018a764ec7c618bcc7f7912b2334bbd99",
+                "url": "https://api.github.com/repos/soundintheory/fuel-cmf/zipball/def7b182381bb772ed8ab99924d7b47d4031004e",
+                "reference": "def7b182381bb772ed8ab99924d7b47d4031004e",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 "bootstrap",
                 "cmf"
             ],
-            "time": "2013-10-29 14:52:23"
+            "time": "2013-11-18 13:09:55"
         },
         {
             "name": "soundintheory/hooked-package-installer",
@@ -1352,12 +1352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "92cdb410d68c7b6ccb6eb38ad0ffe4e2d1cd9a2c"
+                "reference": "846e8fa8fdb5fab85cdb053b26687dd073c33051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/92cdb410d68c7b6ccb6eb38ad0ffe4e2d1cd9a2c",
-                "reference": "92cdb410d68c7b6ccb6eb38ad0ffe4e2d1cd9a2c",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/846e8fa8fdb5fab85cdb053b26687dd073c33051",
+                "reference": "846e8fa8fdb5fab85cdb053b26687dd073c33051",
                 "shasum": ""
             },
             "require": {
@@ -1396,7 +1396,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-31 16:40:24"
+            "time": "2013-11-13 21:30:16"
         },
         {
             "name": "symfony/translation",
@@ -1405,12 +1405,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "8addaff4947de4a9342318de62a078d74b1bd603"
+                "reference": "10215155cf7f40de1f3b3857965173070e81508a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/8addaff4947de4a9342318de62a078d74b1bd603",
-                "reference": "8addaff4947de4a9342318de62a078d74b1bd603",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/10215155cf7f40de1f3b3857965173070e81508a",
+                "reference": "10215155cf7f40de1f3b3857965173070e81508a",
                 "shasum": ""
             },
             "require": {
@@ -1451,7 +1451,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-10 14:19:44"
+            "time": "2013-11-13 21:30:16"
         },
         {
             "name": "symfony/validator",
@@ -1460,12 +1460,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Validator.git",
-                "reference": "fd0847052b418789a4e1a8cba34be0c910a4e1d1"
+                "reference": "e5fe6fed43cbba0a0b05546eb5852ff53c39f01c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Validator/zipball/fd0847052b418789a4e1a8cba34be0c910a4e1d1",
-                "reference": "fd0847052b418789a4e1a8cba34be0c910a4e1d1",
+                "url": "https://api.github.com/repos/symfony/Validator/zipball/e5fe6fed43cbba0a0b05546eb5852ff53c39f01c",
+                "reference": "e5fe6fed43cbba0a0b05546eb5852ff53c39f01c",
                 "shasum": ""
             },
             "require": {
@@ -1512,7 +1512,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-30 08:27:36"
+            "time": "2013-11-09 15:57:10"
         },
         {
             "name": "twig/extensions",
@@ -1520,12 +1520,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig-extensions.git",
-                "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0"
+                "reference": "d4dc27cc824b2b4faf7edbfbe652e3fdaec696b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
-                "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/d4dc27cc824b2b4faf7edbfbe652e3fdaec696b6",
+                "reference": "d4dc27cc824b2b4faf7edbfbe652e3fdaec696b6",
                 "shasum": ""
             },
             "require": {
@@ -1559,7 +1559,7 @@
                 "i18n",
                 "text"
             ],
-            "time": "2013-10-18 19:37:15"
+            "time": "2013-11-11 19:09:41"
         },
         {
             "name": "twig/twig",
