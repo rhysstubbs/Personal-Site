@@ -3,7 +3,7 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -117,14 +117,18 @@ class Format
 	 * @param   mixed        $data
 	 * @param   null         $structure
 	 * @param   null|string  $basenode
+	 * @param   null|bool    whether to use CDATA in nodes
 	 * @return  string
 	 */
-	public function to_xml($data = null, $structure = null, $basenode = 'xml')
+	public function to_xml($data = null, $structure = null, $basenode = null, $use_cdata = null)
 	{
 		if ($data == null)
 		{
 			$data = $this->_data;
 		}
+
+		is_null($basenode) and $basenode = \Config::get('format.xml.basenode', 'xml');
+		is_null($use_cdata) and $use_cdata = \Config::get('format.xml.use_cdata', false);
 
 		// turn off compatibility mode as simple xml throws a wobbly if you don't.
 		if (ini_get('zend.ze1_compatibility_mode') == 1)
@@ -163,16 +167,25 @@ class Format
 				// recursive call if value is not empty
 				if( ! empty($value))
 				{
-					$this->to_xml($value, $node, $key);
+					$this->to_xml($value, $node, $key, $use_cdata);
 				}
 			}
 
 			else
 			{
 				// add single node.
-				$value = htmlspecialchars(html_entity_decode($value, ENT_QUOTES, 'UTF-8'), ENT_QUOTES, "UTF-8");
+				$encoded = htmlspecialchars(html_entity_decode($value, ENT_QUOTES, 'UTF-8'), ENT_QUOTES, "UTF-8");
 
-				$structure->addChild($key, $value);
+				if ($use_cdata and ($encoded !== (string) $value))
+				{
+					$dom = dom_import_simplexml($structure->addChild($key));
+					$owner = $dom->ownerDocument;
+					$dom->appendChild($owner->createCDATASection($value));
+				}
+				else
+				{
+					$structure->addChild($key, $encoded);
+				}
 			}
 		}
 
@@ -190,10 +203,10 @@ class Format
 	public function to_csv($data = null, $delimiter = null)
 	{
 		// csv format settings
-		$newline = \Config::get('format.csv.newline', "\n");
-		$delimiter or $delimiter = \Config::get('format.csv.delimiter', ',');
-		$enclosure = \Config::get('format.csv.enclosure', '"');
-		$escape = \Config::get('format.csv.escape', '\\');
+		$newline = \Config::get('format.csv.export.newline', \Config::get('format.csv.newline', "\n"));
+		$delimiter or $delimiter = \Config::get('format.csv.export.delimiter', \Config::get('format.csv.delimiter', ','));
+		$enclosure = \Config::get('format.csv.export.enclosure', \Config::get('format.csv.enclosure', '"'));
+		$escape = \Config::get('format.csv.export.escape', \Config::get('format.csv.escape', '"'));
 
 		// escape function
 		$escaper = function($items) use($enclosure, $escape) {
@@ -378,12 +391,12 @@ class Format
 	{
 		$data = array();
 
-		$rows = preg_split('/(?<='.preg_quote(\Config::get('format.csv.enclosure', '"')).')'.\Config::get('format.csv.regex_newline', '\n').'/', trim($string));
+		$rows = preg_split('/(?<='.preg_quote(\Config::get('format.csv.import.enclosure', \Config::get('format.csv.enclosure', '"'))).')'.\Config::get('format.csv.regex_newline', '\n').'/', trim($string));
 
 		// csv config
-		$delimiter = \Config::get('format.csv.delimiter', ',');
-		$enclosure = \Config::get('format.csv.enclosure', '"');
-		$escape = \Config::get('format.csv.escape', '\\');
+		$delimiter = \Config::get('format.csv.import.delimiter', \Config::get('format.csv.delimiter', ','));
+		$enclosure = \Config::get('format.csv.import.enclosure', \Config::get('format.csv.enclosure', '"'));
+		$escape = \Config::get('format.csv.import.escape', \Config::get('format.csv.escape', '"'));
 
 		// Get the headings
 		$headings = str_replace($escape.$enclosure, $enclosure, str_getcsv(array_shift($rows), $delimiter, $enclosure, $escape));

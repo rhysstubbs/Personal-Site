@@ -3,7 +3,7 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -302,7 +302,7 @@ class Finder
 		$found = $multiple ? array() : false;
 
 		// absolute path requested?
-		if ($file[0] === '/' or (isset($file[1]) and $file[1] === ':'))
+		if ($file[0] === '/' or substr($file,1,2) === ':\\')
 		{
 			if ( ! is_file($file))
 			{

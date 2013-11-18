@@ -3,7 +3,7 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -385,26 +385,42 @@ class DBUtil
 	 *
 	 * @param    string    $charset       the character set
 	 * @param    bool      $is_default    whether to use default
+	 * @param    string    $db       the database name in the config
+	 * @param    string    $collation       the collating sequence to be used
 	 * @return   string    the formated charset sql
 	 */
-	protected static function process_charset($charset = null, $is_default = false, $db = null)
+	protected static function process_charset($charset = null, $is_default = false, $db = null, $collation = null)
 	{
 		$charset or $charset = \Config::get('db.'.($db ? $db : \Config::get('db.active')).'.charset', null);
+
 		if (empty($charset))
 		{
 			return '';
 		}
 
-		if (($pos = stripos($charset, '_')) !== false)
+		$collation or $collation = \Config::get('db.'.($db ? $db : \Config::get('db.active')).'.collation', null);
+
+		if (empty($collation) and ($pos = stripos($charset, '_')) !== false)
 		{
-			$charset = ' CHARACTER SET '.substr($charset, 0, $pos).' COLLATE '.$charset;
-		}
-		else
-		{
-			$charset = ' CHARACTER SET '.$charset;
+			$collation = $charset;
+			$charset = substr($charset, 0, $pos);
 		}
 
-		$is_default and $charset = ' DEFAULT'.$charset;
+		$charset = 'CHARACTER SET '.$charset;
+
+		if ($is_default)
+		{
+			$charset = 'DEFAULT '.$charset;
+		}
+
+		if ( ! empty($collation))
+		{
+			if ($is_default)
+			{
+				$charset .= ' DEFAULT';
+			}
+			$charset .= ' COLLATE '.$collation;
+		}
 
 		return $charset;
 	}
@@ -574,7 +590,7 @@ class DBUtil
 		catch (\Database_Exception $e)
 		{
 			// check if we have a DB connection at all
-			$connection = \Database_Connection::instance($db ? $db : static::$connection)->connection();
+			$connection = \Database_Connection::instance($db ? $db : static::$connection)->has_connection();
 
 			// if no connection could be made, re throw the exception
 			if ( ! $connection)
@@ -607,6 +623,15 @@ class DBUtil
 		}
 		catch (\Database_Exception $e)
 		{
+			// check if we have a DB connection at all
+			$connection = \Database_Connection::instance($db ? $db : static::$connection)->has_connection();
+
+			// if no connection could be made, re throw the exception
+			if ( ! $connection)
+			{
+				throw $e;
+			}
+
 			return false;
 		}
 	}

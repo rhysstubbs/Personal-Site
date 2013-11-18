@@ -5,7 +5,7 @@
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -363,12 +363,13 @@ class Model_Nestedset extends Model
 	 *
 	 * @return  Model_Nestedset  this object, for chaining
 	 */
-	public function path()
+	public function path($addroot = true)
 	{
 		$this->_node_operation = array(
 			'single' => false,
 			'action' => 'path',
 			'to' => null,
+			'addroot' => $addroot,
 		);
 
 		// return the object for chaining
@@ -744,7 +745,7 @@ class Model_Nestedset extends Model
 	 * @param   string  property name to store the node's children
 	 * @return	array
 	 */
-	public function dump_tree($as_object = false, $children = 'children')
+	public function dump_tree($as_object = false, $children = 'children', $path = 'path')
 	{
 		// get the PK
 		$pk = reset(static::$_primary_key);
@@ -752,10 +753,31 @@ class Model_Nestedset extends Model
 		// and the tree pointers
 		$left_field = static::tree_config('left_field');
 		$right_field = static::tree_config('right_field');
+		$title_field = static::tree_config('title_field');
 
 		// storage for the result, start with the current node
-		$this[$children] = array();
-		$tree = $as_object ? array($this->{$pk} => $this) : array($this->{$pk} => $this->to_array(true));
+		if ($as_object)
+		{
+			$this->_custom_data[$children] = array();
+			$tree = array($this->{$pk} => $this);
+		}
+		else
+		{
+			$this[$children] = array();
+			$tree = array($this->{$pk} => $this->to_array(true));
+		}
+
+		if ( ! empty($title_field) and isset($this->{$title_field}))
+		{
+			if ($as_object)
+			{
+				$this->_custom_data[$path] = '/';
+			}
+			else
+			{
+				$this[$path] = '/';
+			}
+		}
 
 		// parent tracker
 		$tracker = array();
@@ -765,23 +787,42 @@ class Model_Nestedset extends Model
 		// loop over the descendants
 		foreach ($this->descendants()->get() as $treenode)
 		{
-			// get the data for this node
-			$node = $as_object ? $treenode : $treenode->to_array(true);
-
-			// make sure we have a place to store child information
-			$node[$children] = array();
+			// get the data for this node and make sure we have a place to store child information
+			if ($as_object)
+			{
+				$node = $treenode;
+				$node->_custom_data[$children] = array();
+			}
+			else
+			{
+				$node = $treenode->to_array(true);
+				$node[$children] = array();
+			}
 
 			// is this node a child of the current parent?
-			if ($treenode->{$left_field} > $tracker[$index][$right_field])
+			while ($treenode->{$left_field} > $tracker[$index][$right_field])
 			{
 				// no, so pop the last parent and move a level back up
 				$index--;
 			}
 
+			// add the path to this node
+			if ( ! empty($title_field) and isset($treenode->{$title_field}))
+			{
+				if ($as_object)
+				{
+					$node->_custom_data[$path] = rtrim($tracker[$index][$path],'/').'/'.$node->{$title_field};
+				}
+				else
+				{
+					$node[$path] = rtrim($tracker[$index][$path],'/').'/'.$node[$title_field];
+				}
+			}
+
 			// add it as a child to the current parent
 			if ($as_object)
 			{
-				$tracker[$index]->{$children}[$treenode->{$pk}] = $node;
+				$tracker[$index]->_custom_data[$children][$treenode->{$pk}] = $node;
 			}
 			else
 			{
@@ -794,7 +835,7 @@ class Model_Nestedset extends Model
 				// create a new parent level
 				if ($as_object)
 				{
-					$tracker[$index+1] =& $tracker[$index]->{$children}[$treenode->{$pk}];
+					$tracker[$index+1] =& $tracker[$index]->_custom_data[$children][$treenode->{$pk}];
 				}
 				else
 				{
@@ -953,9 +994,10 @@ class Model_Nestedset extends Model
 				// set the left- and right pointers for the new root
 				$this->_data[$left_field] = 1;
 				$this->_data[$right_field] = 2;
+				$pk = reset(static::$_primary_key);
 
 				// we need to check if we don't already have this root
-				$query = \DB::select('id')
+				$query = \DB::select($pk)
 					->from(static::table())
 					->where($left_field, '=', 1);
 
@@ -1165,7 +1207,7 @@ class Model_Nestedset extends Model
 				// and delete them to
 				foreach ($children as $child)
 				{
-					if ($child->delete($cascade) === false)
+					if ($child->delete_tree($cascade) === false)
 					{
 						throw new \UnexpectedValueException('delete of child node with PK "'.$child->{$pk}.'" failed.');
 					}
@@ -1233,7 +1275,7 @@ class Model_Nestedset extends Model
 	 * @returns  mixed
 	 * @throws  BadMethodCallException if called without a parameter and without a node to fetch
 	 */
-	public function & get($query = null)
+	public function & get($query = null, array $conditions = array())
 	{
 		// do we have any parameters passed?
 		if (func_num_args())
@@ -1247,7 +1289,7 @@ class Model_Nestedset extends Model
 			else
 			{
 				// assume it's a model getter call
-				return parent::get($query);
+				return parent::get($query, $conditions);
 			}
 		}
 
@@ -1421,9 +1463,11 @@ class Model_Nestedset extends Model
 				if ( ! $this->is_new())
 				{
 					$parent = $this;
+					$pk = reset(static::$_primary_key);
+
 					while (($parent = $parent->parent()->get_one()) !== null)
 					{
-						$result[$parent->id] = $parent;
+						$result[$parent->{$pk}] = $parent;
 					}
 				}
 
@@ -1480,15 +1524,21 @@ class Model_Nestedset extends Model
 					// storage for the path
 					$path = '';
 
+					// do we need to add the root?
+					$addroot = $this->_node_operation['addroot'];
+
 					// get all parents
 					$result = $this->ancestors()->get();
 
 					// construct the path
 					foreach($result as $object)
 					{
-						$path .= $object->{$title_field}.'/';
+						if ($addroot or $object->{$left_field} > 1)
+						{
+							$path .= $object->{$title_field}.'/';
+						}
 					}
-					$path .= $this->{$title_field}.'/';
+					$path .= $this->{$title_field};
 
 					// and return it
 					return $path;

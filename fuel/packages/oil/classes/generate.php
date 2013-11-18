@@ -5,7 +5,7 @@
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -495,7 +495,7 @@ MODEL;
 		is_dir($view_dir) or static::$create_folders[] = $view_dir;
 
 		// Add the default template if it doesnt exist
-		if ( ! file_exists($app_template = APPPATH.'views/template.php'))
+		if ( ! is_file($app_template = APPPATH.'views/template.php'))
 		{
 			static::create($app_template, file_get_contents(\Package::exists('oil').'views/scaffolding/template.php'), 'view');
 		}
@@ -680,7 +680,7 @@ VIEW;
 						$field_array['name'] = array_shift($parts);
 						foreach ($parts as $part_i => $part)
 						{
-							preg_match('/([a-z0-9_-]+)(?:\[([0-9a-z\,\s]+)\])?/i', $part, $part_matches);
+							preg_match('/([a-z0-9_-]+)(?:\[([0-9a-z_\-\,\s]+)\])?/i', $part, $part_matches);
 							array_shift($part_matches);
 
 							if (count($part_matches) < 1)
@@ -783,6 +783,13 @@ VIEW;
 
 		// Build the migration
 		list($up, $down)=$migration;
+
+		// If we don't have any, bail out
+		if (empty($up) and empty($down))
+		{
+			throw new \Exception('No migration could be generated. Please verify your command syntax.');
+			exit;
+		}
 
 		$migration_name = ucfirst(strtolower($migration_name));
 
@@ -923,7 +930,7 @@ CONTROLLER;
 	{
 		$output = <<<HELP
 Usage:
-  php oil [g|generate] [config|controller|views|model|migration|scaffold|admin|task] [options]
+  php oil [g|generate] [config|controller|views|model|migration|scaffold|admin|task|package] [options]
 
 Runtime options:
   -f, [--force]    # Overwrite files that already exist
@@ -943,6 +950,7 @@ Examples:
   php oil g scaffold/template_subfolder <modelname> [<fieldname1>:<type1> |<fieldname2>:<type2> |..]
   php oil g config <filename> [<key1>:<value1> |<key2>:<value2> |..]
   php oil g task <taskname> [<cmd1> |<cmd2> |..]
+  php oil g package <packagename>
 
 Note that the next two lines are equivalent:
   php oil g scaffold <modelname> ...
@@ -956,13 +964,370 @@ HELP;
 	}
 
 
+	public static function package($args, $build = true)
+	{
+		$name       = str_replace(array('/', '_', '-'), '', \Str::lower(array_shift($args)));
+		$class_name = ucfirst($name);
+		$vcs        = \Cli::option('vcs', \Cli::option('v', false));
+		$path       = \Cli::option('path', \Cli::option('p', PKGPATH));
+		$drivers    = \Cli::option('drivers', \Cli::option('d', ''));
+
+		if (empty($name))
+		{
+			throw new \Exception('No package name has been provided.');
+		}
+
+		if ( ! in_array($path, \Config::get('package_paths')) and ! in_array(realpath($path), \Config::get('package_paths')) )
+		{
+			throw new \Exception('Given path is not a valid package path.');
+		}
+
+		\Str::ends_with($path, DS) or $path .= DS;
+		$path .= $name . DS;
+
+		if (is_dir($path))
+		{
+			throw new \Exception('Package already exists.');
+		}
+
+		if ($vcs)
+		{
+			$output = <<<COMPOSER
+{
+	"name": "fuel/{$name}",
+	"type": "fuel-package",
+	"description": "{$class_name} package",
+	"keywords": [""],
+	"homepage": "http://fuelphp.com",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "AUTHOR",
+			"email": "AUTHOR@example.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "{$name}"
+	}
+}
+
+COMPOSER;
+
+			static::create($path . 'composer.json', $output);
+
+			$output = <<<README
+# {$class_name} package
+Here comes some description
+
+README;
+
+			static::create($path . 'README.md', $output);
+		}
+
+		if ( ! empty($drivers))
+		{
+			$drivers === true or $drivers = explode(',', $drivers);
+
+			$output = <<<CLASS
+<?php
+
+namespace {$class_name};
+
+class {$class_name}Exception extends \FuelException {}
+
+class {$class_name}
+{
+	/**
+	 * loaded instance
+	 */
+	protected static \$_instance = null;
+
+	/**
+	 * array of loaded instances
+	 */
+	protected static \$_instances = array();
+
+	/**
+	 * Default config
+	 * @var array
+	 */
+	protected static \$_defaults = array();
+
+	/**
+	 * Init
+	 */
+	public static function _init()
+	{
+		\Config::load('{$name}', true);
+	}
+
+	/**
+	 * {$class_name} driver forge.
+	 *
+	 * @param	string			\$instance		Instance name
+	 * @param	array			\$config		Extra config array
+	 * @return  {$class_name} instance
+	 */
+	public static function forge(\$instance = 'default', \$config = array())
+	{
+		is_array(\$config) or \$config = array('driver' => \$config);
+
+		\$config = \Arr::merge(static::\$_defaults, \Config::get('{$name}', array()), \$config);
+
+		\$class = '\\{$class_name}\\{$class_name}_' . ucfirst(strtolower(\$config['driver']));
+
+		if( ! class_exists(\$class, true))
+		{
+			throw new \FuelException('Could not find {$class_name} driver: ' . ucfirst(strtolower(\$config['driver']));
+		}
+
+		\$driver = new \$class(\$config);
+
+		static::\$_instances[\$instance] = \$driver;
+
+		return \$driver;
+	}
+
+	/**
+	 * Return a specific driver, or the default instance (is created if necessary)
+	 *
+	 * @param   string  \$instance
+	 * @return  {$class_name} instance
+	 */
+	public static function instance(\$instance = null)
+	{
+		if (\$instance !== null)
+		{
+			if ( ! array_key_exists(\$instance, static::\$_instances))
+			{
+				return false;
+			}
+
+			return static::\$_instances[\$instance];
+		}
+
+		if (static::\$_instance === null)
+		{
+			static::\$_instance = static::forge();
+		}
+
+		return static::\$_instance;
+	}
+}
+
+CLASS;
+
+			static::create($path . 'classes' . DS . $name . '.php', $output);
+
+
+			$output = <<<DRIVER
+<?php
+
+namespace {$class_name};
+
+abstract class {$class_name}_Driver
+{
+	/**
+	* Driver config
+	* @var array
+	*/
+	protected \$config = array();
+
+	/**
+	* Driver constructor
+	*
+	* @param array \$config driver config
+	*/
+	public function __construct(array \$config = array())
+	{
+		\$this->config = \$config;
+	}
+
+	/**
+	* Get a driver config setting.
+	*
+	* @param string \$key the config key
+	* @param mixed  \$default the default value
+	* @return mixed the config setting value
+	*/
+	public function get_config(\$key, \$default = null)
+	{
+		return \Arr::get(\$this->config, \$key, \$default);
+	}
+
+	/**
+	* Set a driver config setting.
+	*
+	* @param string \$key the config key
+	* @param mixed \$value the new config value
+	* @return object \$this for chaining
+	*/
+	public function set_config(\$key, \$value)
+	{
+		\Arr::set(\$this->config, \$key, \$value);
+
+		return \$this;
+	}
+}
+
+DRIVER;
+
+			static::create($path . 'classes' . DS . $name . DS . 'driver.php', $output);
+
+			$bootstrap =  "\n\t'{$class_name}\\\\{$class_name}_Driver' => __DIR__ . '/classes/{$name}/driver.php',";
+			if (is_array($drivers))
+			{
+				foreach ($drivers as $driver)
+				{
+					$driver = \Str::lower($driver);
+					$driver_name = ucfirst($driver);
+					$output = <<<CLASS
+<?php
+
+namespace {$class_name};
+
+class {$class_name}_{$driver_name}  extends {$class_name}_Driver
+{
+	/**
+	* Driver specific functions
+	*/
+}
+
+CLASS;
+					$bootstrap .= "\n\t'{$class_name}\\\\{$class_name}_{$driver_name}' => __DIR__ . '/classes/{$name}/{$driver}.php',";
+					static::create($path . 'classes' . DS . $name . DS . $driver . '.php', $output);
+				}
+			}
+		}
+		else
+		{
+			$output = <<<CLASS
+<?php
+
+namespace {$class_name};
+
+class {$class_name}Exception extends \FuelException {}
+
+class {$class_name}
+{
+	/**
+	 * Default config
+	 * @var array
+	 */
+	protected static \$_defaults = array();
+
+	/**
+	* Driver config
+	* @var array
+	*/
+	protected \$config = array();
+
+	/**
+	 * Init
+	 */
+	public static function _init()
+	{
+		\Config::load('{$name}', true);
+	}
+
+	/**
+	 * {$class_name} driver forge.
+	 *
+	 * @param	array			\$config		Config array
+	 * @return  {$class_name}
+	 */
+	public static function forge(\$config = array())
+	{
+		\$config = \Arr::merge(static::\$_defaults, \Config::get('{$name}', array()), \$config);
+
+		\$class = new static(\$config);
+
+		return \$class;
+	}
+
+	/**
+	* Driver constructor
+	*
+	* @param array \$config driver config
+	*/
+	public function __construct(array \$config = array())
+	{
+		\$this->config = \$config;
+	}
+
+	/**
+	* Get a config setting.
+	*
+	* @param string \$key the config key
+	* @param mixed  \$default the default value
+	* @return mixed the config setting value
+	*/
+	public function get_config(\$key, \$default = null)
+	{
+		return \Arr::get(\$this->config, \$key, \$default);
+	}
+
+	/**
+	* Set a config setting.
+	*
+	* @param string \$key the config key
+	* @param mixed \$value the new config value
+	* @return object \$this for chaining
+	*/
+	public function set_config(\$key, \$value)
+	{
+		\Arr::set(\$this->config, \$key, \$value);
+
+		return \$this;
+	}
+}
+
+CLASS;
+
+			static::create($path . 'classes' . DS . $name . '.php', $output);
+
+			$bootstrap = "";
+		}
+
+			$output = <<<CONFIG
+<?php
+
+return array(
+
+);
+
+CONFIG;
+
+			static::create($path . 'config' . DS . $name . '.php', $output);
+
+		$output = <<<CLASS
+<?php
+
+Autoloader::add_core_namespace('{$class_name}');
+
+Autoloader::add_classes(array(
+	'{$class_name}\\\\{$class_name}' => __DIR__ . '/classes/{$name}.php',
+	'{$class_name}\\\\{$class_name}Exception' => __DIR__ . '/classes/{$name}.php',
+{$bootstrap}
+));
+
+CLASS;
+		static::create($path . 'bootstrap.php', $output);
+
+		$build and static::build();
+	}
+
+
 	public static function create($filepath, $contents, $type = 'file')
 	{
 		$directory = dirname($filepath);
 		is_dir($directory) or static::$create_folders[] = $directory;
 
 		// Check if a file exists then work out how to react
-		if (file_exists($filepath))
+		if (is_file($filepath))
 		{
 			// Don't override a file
 			if (\Cli::option('s', \Cli::option('skip')) === true)
@@ -1049,11 +1414,11 @@ HELP;
 
 	private static function _update_current_version($version)
 	{
-		if (file_exists($app_path = APPPATH.'config'.DS.'migrations.php'))
+		if (is_file($app_path = APPPATH.'config'.DS.'migrations.php'))
 		{
 			$contents = file_get_contents($app_path);
 		}
-		elseif (file_exists($core_path = COREPATH.'config'.DS.'migrations.php'))
+		elseif (is_file($core_path = COREPATH.'config'.DS.'migrations.php'))
 		{
 			$contents = file_get_contents($core_path);
 		}

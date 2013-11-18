@@ -3,7 +3,7 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -284,7 +284,7 @@ class Migrate
 			if ($result === false)
 			{
 				logger(Fuel::L_INFO, 'Skipped migration to '.$ver.'.');
-				return $done;
+				return false;
 			}
 
 			$file = basename($migration['path'], '.php');
@@ -652,7 +652,7 @@ class Migrate
 			}
 
 			// delete any old migration config file that may exist
-			file_exists(APPPATH.'config'.DS.'migrations.php') and unlink(APPPATH.'config'.DS.'migrations.php');
+			is_file(APPPATH.'config'.DS.'migrations.php') and unlink(APPPATH.'config'.DS.'migrations.php');
 		}
 
 		// set connection to default

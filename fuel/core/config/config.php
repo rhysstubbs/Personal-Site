@@ -3,7 +3,7 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -263,6 +263,36 @@ return array(
 		 *  Wether to strip the extension
 		 */
 		'strip_extension' => true,
+	),
+
+	/**
+	 * Response settings
+	 */
+	'response' => array(
+		/**
+		 *  Wether to support URI wildcards when redirecting
+		 */
+		'redirect_with_wildcards' => true,
+	),
+
+	/**
+	 * Config settings
+	 */
+	'config' => array(
+		/*
+		 * Name of the table used by the Config_Db driver
+		 */
+		'table_name' => 'config',
+	),
+
+	/**
+	 * Lang settings
+	 */
+	'lang' => array(
+		/*
+		 * Name of the table used by the Lang_Db driver
+		 */
+		'table_name' => 'lang',
 	),
 
 	/**

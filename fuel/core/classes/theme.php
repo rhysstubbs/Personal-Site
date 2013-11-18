@@ -3,7 +3,7 @@
  * Part of the Fuel framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -209,6 +209,20 @@ class Theme
 		}
 
 		return \View::forge($this->find_file($view), $data, $auto_filter);
+	}
+
+	/**
+	 * Loads a viewmodel, and have it use the view from the currently active theme,
+	 * the fallback theme, or the standard FuelPHP cascading file system
+	 *
+	 * @param   string  ViewModel classname without View_ prefix or full classname
+	 * @param   string  Method to execute
+	 * @param   bool    $auto_filter  Auto filter the view data
+	 * @return  View    New View object
+	 */
+	public function viewmodel($view, $method = 'view', $auto_filter = null)
+	{
+		return \ViewModel::forge($view, $method, $auto_filter, $this->find_file($view));
 	}
 
 	/**
@@ -684,7 +698,7 @@ class Theme
 		// determine the path prefix and optionally the module path
 		$path_prefix = '';
 		$module_path = null;
-		if ($this->config['use_modules'] and $module = \Request::active()->module)
+		if ($this->config['use_modules'] and class_exists('Request', false) and $request = \Request::active() and $module = $request->module)
 		{
 			// we're using module name prefixing
 			$path_prefix = $module.DS;

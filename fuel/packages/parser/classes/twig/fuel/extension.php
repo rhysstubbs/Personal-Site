@@ -5,7 +5,7 @@
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
  * @package    Fuel
- * @version    1.6
+ * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
@@ -95,16 +95,16 @@ class Twig_Fuel_Extension extends Twig_Extension
 	 */
 	public function url($uri = '', $named_params = array())
 	{
-		if ($named_uri = Router::get($uri, $named_params))
+		if ($named_uri = \Router::get($uri, $named_params))
 		{
 			$uri = $named_uri;
 		}
 
-		return Uri::create($uri);
+		return \Uri::create($uri);
 	}
 
 	public function fuel_version()
 	{
-		return Fuel::VERSION;
+		return \Fuel::VERSION;
 	}
 }
