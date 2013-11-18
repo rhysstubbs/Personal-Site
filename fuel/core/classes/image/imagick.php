@@ -32,7 +32,7 @@ class Image_Imagick extends \Image_Driver
 		return $this;
 	}
 
-	protected function _crop($x1, $y1, $x2, $y2)
+	/* protected function _crop($x1, $y1, $x2, $y2)
 	{
 		extract(parent::_crop($x1, $y1, $x2, $y2));
 
@@ -42,6 +42,26 @@ class Image_Imagick extends \Image_Driver
 		$this->debug("Cropping image ".$width."x".$height."+$x1+$y1 based on coords ($x1, $y1), ($x2, $y2)");
 
 		$this->imagick->cropImage($width, $height, $x1, $y1);
+		$this->imagick->setImagePage(0, 0, 0, 0);
+	} */
+	
+	protected function _crop($x1, $y1, $x2, $y2)
+	{
+		extract(parent::_crop($x1, $y1, $x2, $y2));
+
+		$width = $x2 - $x1;
+		$height = $y2 - $y1;
+		$sizes = $this->sizes();
+		
+		$this->debug("Cropping image ".$width."x".$height."+$x1+$y1 based on coords ($x1, $y1), ($x2, $y2)");
+		
+		if ($x1 < 0 || $y1 < 0 || $x2 > $sizes->width || $y2 > $sizes->height) {
+			$this->imagick->setImageBackgroundColor($this->create_color($this->config['bgcolor'] == null ? '#fff' : $this->config['bgcolor']));
+			$this->imagick->extentImage($width, $height, $x1, $y1);
+		} else {
+			$this->imagick->cropImage($width, $height, $x1, $y1);
+		}
+		
 		$this->imagick->setImagePage(0, 0, 0, 0);
 	}
 
