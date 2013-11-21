@@ -85,25 +85,12 @@ $show-grid-background: false;
 
 // add $n grid units worth of space to the left of a column
 @mixin prepend($n, $col-width, $gutter-width) {
-    padding-left: column-width($n, $col-width, $gutter-width) + $gutter-width !important;
+    margin-left: column-width($n, $col-width, $gutter-width) + ($gutter-width / 2);
 }
 
-// add $n grid units worth of space to the left of a column
+// add $n grid units worth of space to the right of a column
 @mixin append($n, $col-width, $gutter-width) {
-    padding-right: column-width($n, $col-width, $gutter-width) + $gutter-width !important;
-}
-
-@mixin push($n, $col-width, $gutter-width) {
-    position: relative;
-    margin-left: $n*($col-width+$gutter-width) !important;
-    margin-right: -$n*($col-width+$gutter-width) !important;
-    margin-top: 0; margin-bottom: 0;
-}
-
-// add $n grid units worth of space to the left of a column
-@mixin pull($n, $col-width, $gutter-width) {
-    position: relative;
-    margin-left: -$n*($col-width+$gutter-width) + $gutter-width !important;
+    margin-right: column-width($n, $col-width, $gutter-width) + ($gutter-width / 2) + $gutter-width;
 }
 
 // Made for extending when creating the *-r columns
@@ -154,7 +141,7 @@ $show-grid-background: false;
     $fluid-col-width: percentage($col-width / $container-width-nopad);
     $fluid-gutter-width: percentage($gutter-width / $container-width-nopad);
     
-    @if !$is-static {
+    @if not $is-static {
         $col-width: $fluid-col-width;
         $gutter-width: $fluid-gutter-width;
         
@@ -182,22 +169,6 @@ $show-grid-background: false;
     // Establish the base classes
     @include grid-base($gutter-width, $base-class, $first-column-class, $last-column-class);
     
-    // Generate padding classes
-    @each $n in $pad-units {
-        .#{$media}-prepend#{$n} {
-            @include prepend($n, $col-width, $gutter-width);
-        }
-        .#{$media}-append#{$n} {
-            @include append($n, $col-width, $gutter-width);
-        }
-        .#{$media}-push#{$n} {
-            @include push($n, $col-width, $gutter-width);
-        }
-        .#{$media}-pull#{$n} {
-            @include pull($n, $col-width, $gutter-width);
-        }
-    }
-    
     // Generate grid classes
     @each $n in $units {
         .#{$media}-#{$n} {
@@ -215,6 +186,16 @@ $show-grid-background: false;
             @extend .#{$media}-#{$n}-f;
             float: right;
             //@extend .pull-right;
+        }
+    }
+    
+    // Generate padding classes
+    @each $n in $pad-units {
+        .#{$media}-prepend#{$n} {
+            @include prepend($n, $col-width, $gutter-width);
+        }
+        .#{$media}-append#{$n} {
+            @include append($n, $col-width, $gutter-width);
         }
     }
     
