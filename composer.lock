@@ -193,7 +193,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -226,16 +227,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449"
+                "reference": "ff36d4216fef8242c3d8ee97fceee977e3c9b9a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e16d7adf45664a50fa86f515b6d5e7f670130449",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/ff36d4216fef8242c3d8ee97fceee977e3c9b9a6",
+                "reference": "ff36d4216fef8242c3d8ee97fceee977e3c9b9a6",
                 "shasum": ""
             },
             "require": {
@@ -251,7 +252,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -296,7 +297,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-10-25 19:04:14"
+            "time": "2013-11-23 16:10:06"
         },
         {
             "name": "doctrine/collections",
@@ -407,7 +408,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -446,12 +448,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "5fdedc4f8f304e8035580807bd36d59e97a87265"
+                "reference": "25a1cced433fcc10997ecf99921804a4ea20f664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/5fdedc4f8f304e8035580807bd36d59e97a87265",
-                "reference": "5fdedc4f8f304e8035580807bd36d59e97a87265",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/25a1cced433fcc10997ecf99921804a4ea20f664",
+                "reference": "25a1cced433fcc10997ecf99921804a4ea20f664",
                 "shasum": ""
             },
             "require": {
@@ -509,7 +511,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-11-15 14:43:05"
+            "time": "2013-11-19 19:49:34"
         },
         {
             "name": "doctrine/inflector",
@@ -545,9 +547,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -585,12 +588,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "bc0e1f0cc285127a38c6c8ea88bc5dba2fd53e94"
+                "reference": "57d5a024b48709c56ce5bb93072948359220f36c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/bc0e1f0cc285127a38c6c8ea88bc5dba2fd53e94",
-                "reference": "bc0e1f0cc285127a38c6c8ea88bc5dba2fd53e94",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/57d5a024b48709c56ce5bb93072948359220f36c",
+                "reference": "57d5a024b48709c56ce5bb93072948359220f36c",
                 "shasum": ""
             },
             "require": {
@@ -634,7 +637,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2013-03-07 12:15:25"
+            "time": "2013-11-19 06:15:26"
         },
         {
             "name": "doctrine/orm",
@@ -642,12 +645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "3529cd4282b3966707f4a5dc67a992fba6c687dd"
+                "reference": "75d7ac2783345803da1cc211735382f7a4c5d055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/3529cd4282b3966707f4a5dc67a992fba6c687dd",
-                "reference": "3529cd4282b3966707f4a5dc67a992fba6c687dd",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/75d7ac2783345803da1cc211735382f7a4c5d055",
+                "reference": "75d7ac2783345803da1cc211735382f7a4c5d055",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +713,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-11-16 18:52:09"
+            "time": "2013-11-23 13:14:44"
         },
         {
             "name": "fuelphp/upload",
@@ -762,12 +765,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3"
+                "reference": "f51987e4a11862cdf4225672777f745f8f7534f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/1b940f2069fb897df61fb55d96d508db3851ced3",
-                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/f51987e4a11862cdf4225672777f745f8f7534f5",
+                "reference": "f51987e4a11862cdf4225672777f745f8f7534f5",
                 "shasum": ""
             },
             "require": {
@@ -834,7 +837,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2013-11-17 16:47:29"
+            "time": "2013-11-20 14:15:28"
         },
         {
             "name": "hautelook/phpass",
@@ -1106,19 +1109,24 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
+                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
                 "shasum": ""
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Psr\\Log\\": ""
@@ -1140,7 +1148,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2013-11-19 10:21:35"
         },
         {
             "name": "roderik/pwgen-php",
@@ -1192,12 +1200,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/soundintheory/fuel-cmf.git",
-                "reference": "def7b182381bb772ed8ab99924d7b47d4031004e"
+                "reference": "97357dfc75b0254b386a6911578d69beed86e712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/soundintheory/fuel-cmf/zipball/def7b182381bb772ed8ab99924d7b47d4031004e",
-                "reference": "def7b182381bb772ed8ab99924d7b47d4031004e",
+                "url": "https://api.github.com/repos/soundintheory/fuel-cmf/zipball/97357dfc75b0254b386a6911578d69beed86e712",
+                "reference": "97357dfc75b0254b386a6911578d69beed86e712",
                 "shasum": ""
             },
             "require": {
@@ -1236,7 +1244,9 @@
                     "classes/CMF/Twig/Twig_Loader_Filesystem.php",
                     "classes/CMF/Doctrine/AnnotationReader.php",
                     "classes/Symfony/Component/Validator/Constraints/UniqueEntity.php",
-                    "classes/Symfony/Component/Validator/Constraints/UniqueEntityValidator.php"
+                    "classes/Symfony/Component/Validator/Constraints/UniqueEntityValidator.php",
+                    "classes/CMF/Doctrine/Extensions/TranslatableAnnotationDriver.php",
+                    "classes/CMF/Doctrine/Extensions/TranslatableListener.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1256,7 +1266,7 @@
                 "bootstrap",
                 "cmf"
             ],
-            "time": "2013-11-18 13:09:55"
+            "time": "2013-11-23 11:59:39"
         },
         {
             "name": "soundintheory/hooked-package-installer",
@@ -1352,12 +1362,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "846e8fa8fdb5fab85cdb053b26687dd073c33051"
+                "reference": "f694dcda2204ee14a047ef60bfd9faf242adbc1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/846e8fa8fdb5fab85cdb053b26687dd073c33051",
-                "reference": "846e8fa8fdb5fab85cdb053b26687dd073c33051",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/f694dcda2204ee14a047ef60bfd9faf242adbc1a",
+                "reference": "f694dcda2204ee14a047ef60bfd9faf242adbc1a",
                 "shasum": ""
             },
             "require": {
@@ -1396,7 +1406,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-13 21:30:16"
+            "time": "2013-11-22 17:42:00"
         },
         {
             "name": "symfony/translation",
@@ -1405,12 +1415,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "10215155cf7f40de1f3b3857965173070e81508a"
+                "reference": "352f175db0165d323d777325ba8ee317d028fd4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/10215155cf7f40de1f3b3857965173070e81508a",
-                "reference": "10215155cf7f40de1f3b3857965173070e81508a",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/352f175db0165d323d777325ba8ee317d028fd4a",
+                "reference": "352f175db0165d323d777325ba8ee317d028fd4a",
                 "shasum": ""
             },
             "require": {
@@ -1451,7 +1461,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-13 21:30:16"
+            "time": "2013-11-20 02:31:35"
         },
         {
             "name": "symfony/validator",
@@ -1460,12 +1470,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Validator.git",
-                "reference": "e5fe6fed43cbba0a0b05546eb5852ff53c39f01c"
+                "reference": "934ae7b52a3fb8207b8082ba1ca6a36964ce7052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Validator/zipball/e5fe6fed43cbba0a0b05546eb5852ff53c39f01c",
-                "reference": "e5fe6fed43cbba0a0b05546eb5852ff53c39f01c",
+                "url": "https://api.github.com/repos/symfony/Validator/zipball/934ae7b52a3fb8207b8082ba1ca6a36964ce7052",
+                "reference": "934ae7b52a3fb8207b8082ba1ca6a36964ce7052",
                 "shasum": ""
             },
             "require": {
@@ -1512,7 +1522,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-09 15:57:10"
+            "time": "2013-11-20 18:57:15"
         },
         {
             "name": "twig/extensions",
