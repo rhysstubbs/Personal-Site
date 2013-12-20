@@ -20,7 +20,7 @@
     <script src="/assets/js/respond.min.js"></script>
     <![endif]-->
     
-    <script type="text/javascript" src="/assets/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/assets/js/core.js"></script>
     
 </head>
