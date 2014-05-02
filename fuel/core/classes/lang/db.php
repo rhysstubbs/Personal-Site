@@ -57,6 +57,7 @@ class Lang_Db implements Lang_Interface
 			try
 			{
 				$result = \DB::select('lang')->from($this->table)->where('identifier', '=', $this->identifier)->where('language', '=', $language)->execute();
+
 			}
 			catch (Database_Exception $e)
 			{
@@ -74,8 +75,8 @@ class Lang_Db implements Lang_Interface
 				if ( ! empty($result[0]['lang']))
 				{
 					$lang = $overwrite ?
-						array_merge($lang, unserialize($this->parse_vars($result[0]['lang']))) :
-						\Arr::merge($lang, unserialize($this->parse_vars($result[0]['lang'])));
+						array_merge(unserialize($this->parse_vars($result[0]['lang'])), $lang) :
+						\Arr::merge(unserialize($this->parse_vars($result[0]['lang'])), $lang);
 				}
 			}
 		}
