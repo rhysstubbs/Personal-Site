@@ -1,0 +1,76 @@
+
+// ------------------------------------------------------------------------------------------------------
+// 2 COLUMN LAYOUTS
+
+.c2 {
+    @extend .c;
+    
+    & > .col {
+        @extend .d-12; @extend .h-6; @extend .hl-3; @extend .t-6; @extend .l-12;
+    }
+}
+
+.c2-f {
+    @extend .c-f;
+    
+    & > .col {
+        @extend .d-12-f; @extend .h-6-f; @extend .hl-3-f; @extend .t-6-f; @extend .l-12-f;
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------
+// 3 COLUMN LAYOUTS
+
+.c3 {
+    @extend .c;
+    
+    & > .col {
+        @extend .d-8; @extend .h-6; @extend .hl-6; @extend .t-4; @extend .l-8;
+    }
+}
+
+.c3-f {
+    @extend .c-f;
+    
+    & > .col {
+        @extend .d-8-f; @extend .h-6-f; @extend .hl-6-f; @extend .t-4-f; @extend .l-8-f;
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------
+// 4 COLUMN LAYOUTS
+
+.c4 {
+    @extend .c;
+    
+    & > .col {
+        @extend .d-6; @extend .h-6; @extend .hl-3; @extend .t-3; @extend .l-6;
+    }
+}
+
+.c4-f {
+    @extend .c-f;
+    
+    & > .col {
+        @extend .d-6-f; @extend .h-6-f; @extend .hl-3-f;@extend .t-3-f; @extend .l-6-f;
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------
+// 6 COLUMN LAYOUTS
+
+.c6 {
+    @extend .c;
+    
+    & > .col {
+        @extend .d-4; @extend .h-6; @extend .hl-6; @extend .t-4; @extend .l-4;
+    }
+}
+
+.c6-f {
+    @extend .c-f;
+    
+    & > .col {
+        @extend .d-4-f; @extend .h-6-f; @extend .hl-6-f; @extend .t-4-f; @extend .l-4-f;
+    }
+}

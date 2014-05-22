@@ -26,5 +26,3 @@
 </head>
 <body class="pad">
     
-    <div class="wrap">
-    
