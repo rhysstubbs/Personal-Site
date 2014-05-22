@@ -24,3 +24,5 @@ nbproject/
 /fuel/app/config/production/migrations.php
 /fuel/packages/sprockets
 /fuel/packages/cmf
+cache
+compiled

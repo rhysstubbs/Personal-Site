@@ -1,5 +1,7 @@
 <?php include 'includes/header.php' ?>
 
+<div class="wrap">
+
 	<h1>
 		<span class="l-show-inline">Large</span>
 		<span class="d-show-inline">Default</span>
@@ -74,5 +76,7 @@
 			.c6
 		</div></div>
 	</div>
+
+</div> <!-- wrap -->
 
 <?php include 'includes/footer.php' ?>

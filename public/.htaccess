@@ -10,19 +10,19 @@
 	RewriteCond %{REQUEST_URI} !/scss\.php
 	
 	<IfModule mod_fcgid.c>
-		RewriteRule ^(.*)\.scss$ assets/css/scss.php?p=/$1.scss [QSA,L]
+		RewriteRule ^assets/css/(.*)\.scss$ assets/css/scss.php?p=$1.scss [QSA,L]
 	</IfModule>
 
 	<IfModule !mod_fcgid.c>
 
 		# for normal Apache installations
 		<IfModule mod_php5.c>
-			RewriteRule ^(.*)\.scss$ assets/css/scss.php?p=/$1.scss [L]
+			RewriteRule ^assets/css/(.*)\.scss$ assets/css/scss.php?p=$1.scss [L]
 		</IfModule>
 
 		# for Apache FGCI installations
 		<IfModule !mod_php5.c>
-			RewriteRule ^(.*)\.scss$ assets/css/scss.php?p=/$1.scss [QSA,L]
+			RewriteRule ^assets/css/(.*)\.scss$ assets/css/scss.php?p=$1.scss [QSA,L]
 		</IfModule>
 
 	</IfModule>
