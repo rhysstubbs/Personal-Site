@@ -290,7 +290,12 @@ class Request
 					}
 					elseif (strpos($name, $module.'/') !== 0 and $name != $module and $name !== '_404_')
 					{
-						$name = $module.'/'.$name;
+						$name = $module.(empty($name) ? '' : '/').$name;
+					}
+					
+					if (is_string($_route) && substr($_route, 0, 1) != '/' && strpos($_route, $module.'/') !== 0)
+					{
+						$_route = $module.'/'.$_route;
 					}
 
 					$prepped_routes[$name] = $_route;
