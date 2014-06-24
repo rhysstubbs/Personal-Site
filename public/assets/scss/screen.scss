@@ -30,6 +30,9 @@ body {
 // ------------------------------------------------------------------------------------------------------
 // MEDIA QUERIES AND LAYOUTS
 
+@import "utilities/sprites";
+@import "utilities/layouts";
+
 @import "media/00-default";
 @import "media/01-handheld";
 @import "media/02-handheld-landscape";
@@ -37,5 +40,3 @@ body {
 @import "media/04-large";
 @import "media/05-massive";
 @import "media/06-hi-res";
-
-@import "utilities/layouts";

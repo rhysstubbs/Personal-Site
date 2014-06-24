@@ -5,7 +5,7 @@
 $relative-font-sizing       : false;
 $base-font-size             : 14px;
 $base-line-height           : 24px;
-@import "utilities/vertical-rhythm";
+@import "../utilities/vertical-rhythm";
 @include establish-baseline();
 
 $default-class              : d; // default shortcut which is needed in other contexts, e.g. "d" for ".g-d-#"

@@ -12,17 +12,15 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="">
     
-    <link href="/assets/css/screen.scss" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/global/favicon.ico">
+    <link href="/assets/css/screen.css" rel="stylesheet" type="text/css" />
     
     <!--[if lte IE 8]>  
-    <script src="/assets/js/html5shiv.js"></script>
-    <script src="/assets/js/respond.min.js"></script>
+    <script src="/components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="/components/repond/dest/respond.min.js"></script>
     <![endif]-->
     
-    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/assets/js/core.js"></script>
     
 </head>
-<body class="pad">
+<body>
     

@@ -1,0 +1,19 @@
+.sprite {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  background: url('../images/sprite.png');
+  text-indent: -9999px;
+}
+
+
+@mixin sprite($sprite) {
+  @extend .sprite;
+
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+
+  width: nth($sprite, 5);
+  height: nth($sprite, 6);
+} 

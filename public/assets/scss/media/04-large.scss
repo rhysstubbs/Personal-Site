@@ -10,7 +10,7 @@ $media-min-width                : 1250px;
     $relative-font-sizing       : false;
     $base-font-size             : 14px;
     $base-line-height           : 24px;
-    @import "utilities/vertical-rhythm";
+    @import "../utilities/vertical-rhythm";
     @include establish-baseline();
     
     $media                      : l; // media-specific shortcut, e.g. "l" for ".g-l-#"
