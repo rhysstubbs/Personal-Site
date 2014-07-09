@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
   //Initializing the configuration object
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
     // Build SCSS files
     sass: {
@@ -13,8 +14,8 @@ module.exports = function(grunt) {
           outputStyle: "compressed"
         },
         files: {
-          'public/assets/css/screen.css': 'public/assets/scss/screen.scss',
-          'public/assets/css/print.css': 'public/assets/scss/print.scss'
+          'public/assets/css/screen.min.css': 'public/assets/scss/screen.scss',
+          'public/assets/css/print.min.css': 'public/assets/scss/print.scss'
         }
       },
       dev: {
@@ -29,6 +30,57 @@ module.exports = function(grunt) {
         },
         
       }
+    },
+
+    // Concatenate and minify CSS
+    cssmin: {
+      vendor: {
+        files: {
+          'public/assets/css/vendor.min.css': [
+            //'public/components/magnific-popup/dist/magnific-popup.css'
+          ]
+        }
+      }
+    },
+
+    // Concatenate and compress JS
+    uglify: {
+
+      // Vendor libraries
+      vendor: {
+        options: {
+          mangle: false,
+          sourceMap: true,
+          sourceMapName: 'public/assets/js/dist/vendor.min.map'
+        },
+        files: {
+          'public/assets/js/dist/vendor.min.js': [
+            'public/components/html5shiv/dist/html5shiv.min.js',
+            'public/components/respond/dest/respond.min.js',
+            'public/components/fiber/src/fiber.min.js',
+            'public/components/jquery/dist/jquery.min.js',
+            'public/components/jquery.easing/js/jquery.easing.min.js',
+            'public/components/jquery-placeholder/jquery.placeholder.js',
+            'public/components/imagesloaded/imagesloaded.pkgd.min.js'
+          ]
+        }
+      },
+
+      // Custom code
+      core: {
+        options: {
+          mangle: false,
+          sourceMap: true,
+          sourceMapName: 'public/assets/js/dist/core.min.map',
+          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */'
+        },
+        files: {
+          'public/assets/js/dist/core.min.js': [
+            'public/assets/js/core.js'
+          ],
+        }
+      }
+      
     },
 
     // Build sprite file
@@ -50,11 +102,23 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['public/assets/scss/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['sass:dist']
       },
       sprite: {
         files: ['public/assets/images/**/*.png'],
         tasks: ['sprite']
+      },
+      vendorjs: {
+        files: ['public/components/**/*.js'],
+        tasks: ['uglify:vendor']
+      },
+      corejs: {
+        files: ['public/assets/js/**/*.js', '!public/assets/js/dist/*.js'],
+        tasks: ['uglify:core']
+      },
+      vendorcss: {
+        files: ['public/components/**/*.css'],
+        tasks: ['cssmin:vendor']
       }
     }
 
@@ -63,10 +127,13 @@ module.exports = function(grunt) {
   // Plugin loading
   grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-sass');
 
   // Task definition
-  grunt.registerTask('dist', ['sprite', 'sass:dist']);
+  grunt.registerTask('dist', ['sprite', 'sass:dist', 'uglify:vendor', 'uglify:core']);
   grunt.registerTask('default', ['dist']);
 
 };
