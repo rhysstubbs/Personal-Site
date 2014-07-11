@@ -114,7 +114,7 @@
 
 	BannerSlideshow = function(opts)
 	{
-		this.opts = $.extend({}, BannerSlideshow.defaults, opts);
+		this.opts = $.extend(true, {}, BannerSlideshow.defaults, opts);
         this.wrap = opts.wrap;
 
         if (!this.wrap || !this.wrap.length) return;
