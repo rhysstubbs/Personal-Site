@@ -186,7 +186,11 @@
 			if (this.content.length) {
 				var $content = content.clone();
 				for (var p in slide) {
-					$content.find('.'+p).html(slide[p]);
+					if(slide[p] != '') {
+						$content.find('.'+p).html(slide[p]);
+					} else {
+						$content.find('.'+p).remove();
+					}
 				}
 				contentHtml += '<div class="slide" data-num="'+(i+1)+'">'+$content.html()+'</div>';
 			}
