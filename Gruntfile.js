@@ -100,12 +100,15 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
+      templates: {
+        files: ['public/cuts/**/*.php', 'public/cuts/**/*.html', 'fuel/app/views/**/*.twig'],
+      },
       sass: {
         files: ['public/assets/scss/**/*.scss'],
         tasks: ['sass:dist']
       },
       sprite: {
-        files: ['public/assets/images/**/*.png'],
+        files: ['public/assets/images/sprites/**/*.png'],
         tasks: ['sprite']
       },
       vendorjs: {
