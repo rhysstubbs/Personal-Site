@@ -76,6 +76,123 @@
 			.c6
 		</div></div>
 	</div>
+	
+	<!-- 12 Column -->
+	<div class="c12">
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+		<div class="col"><div class="inner">
+			.c12
+		</div></div>
+	</div>
+	
+	<!-- 24 Column -->
+	<div class="c24">
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		<div class="col"><div class="inner">
+			
+		</div></div>
+		
+	</div>
 
 </div> <!-- wrap -->
 

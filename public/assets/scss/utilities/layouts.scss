@@ -74,3 +74,25 @@
         @extend .d-4-f; @extend .h-6-f; @extend .hl-6-f; @extend .t-4-f; @extend .l-4-f;
     }
 }
+
+// ------------------------------------------------------------------------------------------------------
+// 12 COLUMN LAYOUTS
+
+.c12 {
+    @extend .c;
+    
+    & > .col {
+        @extend .d-2; @extend .h-6; @extend .hl-6; @extend .t-4; @extend .l-2;
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------
+// 24 COLUMN LAYOUTS
+
+.c24 {
+    @extend .c;
+    
+    & > .col {
+        @extend .d-1; @extend .h-6; @extend .hl-6; @extend .t-4; @extend .l-1;
+    }
+}
