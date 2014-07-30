@@ -81,7 +81,7 @@
 		for (var p in lines) {
 			var line = $(lines[p]).map(function() { return $(this).toArray(); } );
 			var maxHeight = Math.max.apply(null, line.map(function() {
-				return $(this).outerHeight();
+				return $(this).height();
 			}).get());
 			line.height(maxHeight);
 		}
