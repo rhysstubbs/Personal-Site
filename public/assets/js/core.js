@@ -42,7 +42,7 @@
 
 	EqualHeightGroups = function(wrap, opts)
 	{
-		this.opts = $.extend({}, BannerSlideshow.defaults, opts || {});
+		this.opts = $.extend({}, EqualHeightGroups.defaults, opts || {});
 		this.wrap = wrap || $('body');
 		
 		if (!this.wrap.find('[data-height-group]').length) return;
