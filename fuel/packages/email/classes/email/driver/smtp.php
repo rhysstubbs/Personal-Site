@@ -142,7 +142,7 @@ class Email_Driver_Smtp extends \Email_Driver
 
 		try
 		{
-			$this->smtp_send('HELP', 214);
+			//$this->smtp_send('HELP', 214);
 		}
 		catch(\SmtpCommandFailureException $e)
 		{
