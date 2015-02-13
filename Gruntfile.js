@@ -38,7 +38,8 @@ module.exports = function(grunt) {
       vendor: {
         files: {
           'public/assets/css/vendor.min.css': [
-            //'public/components/magnific-popup/dist/magnific-popup.css'
+            'public/components/FlexSlider/flexslider.css',
+            'public/components/magnific-popup/dist/magnific-popup.css'
           ]
         }
       }
@@ -56,13 +57,14 @@ module.exports = function(grunt) {
         },
         files: {
           'public/assets/js/dist/vendor.min.js': [
-            'public/components/html5shiv/dist/html5shiv.min.js',
-            'public/components/respond/dest/respond.min.js',
-            'public/components/fiber/src/fiber.min.js',
-            'public/components/jquery/dist/jquery.min.js',
-            'public/components/jquery.easing/js/jquery.easing.min.js',
+            'public/components/html5shiv/dist/html5shiv.js',
+            'public/components/respond/dest/respond.src.js',
+            'public/components/jquery/dist/jquery.js',
+            'public/components/jquery.easing/js/jquery.easing.js',
             'public/components/jquery-placeholder/jquery.placeholder.js',
-            'public/components/imagesloaded/imagesloaded.pkgd.min.js'
+            'public/components/imagesloaded/imagesloaded.js',
+            'public/components/magnific-popup/dist/jquery.magnific-popup.js',
+            'public/components/FlexSlider/jquery.flexslider.js'
           ]
         }
       },

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="">
     
-    <!-- link href="/assets/css/vendor.min.css" rel="stylesheet" type="text/css" / -->
+    <link href="/assets/css/vendor.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/screen.min.css" rel="stylesheet" type="text/css" />
     
     <script type="text/javascript" src="/assets/js/dist/vendor.min.js"></script>
