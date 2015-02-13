@@ -1,7 +1,10 @@
 {
-  "version": 3,
-  "file": "",
-  "sources": ["public/assets/scss/print.scss"],
-  "names": [],
-  "mappings": ""
+	"version": 3,
+	"file": "print.min.css",
+	"sources": [
+		"../scss/print.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "",
+	"names": []
 }

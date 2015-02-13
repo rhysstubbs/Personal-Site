@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           sourceMap: true,
-          sourceComments: 'map',
+          sourceComments: false,
           includePaths: ['public/assets/scss'],
           outputStyle: "compressed"
         },
@@ -21,6 +21,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           sourceMap: true,
+          sourceComments: true,
           includePaths: ['public/assets/scss'],
           outputStyle: "nested"
         },
@@ -87,8 +88,8 @@ module.exports = function(grunt) {
     sprite: {
       all: {
         src: 'public/assets/images/sprites/**/*.png',
-        destImg: 'public/assets/images/sprite.png',
-        destCSS: 'public/assets/scss/utilities/sprites.scss',
+        dest: 'public/assets/images/sprite.png',
+        destCss: 'public/assets/scss/utilities/_sprites.scss',
         cssTemplate: 'public/assets/scss/utilities/sprites.template.mustache',
         padding: 2,
         algorithm: 'binary-tree'

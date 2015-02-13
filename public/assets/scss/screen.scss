@@ -1,42 +1,30 @@
 
 // ------------------------------------------------------------------------------------------------------
-// MAIN IMPORTS & VARIABLES
+// MAIN IMPORTS
 
-@import "utilities/shared";
-@import "utilities/reset";
-@import "utilities/grid-system";
-
-@include global-reset;
-
-$font-family: Arial, sans-serif;
-$text-color: #000;
-$background-color: #FFF;
-
-// ------------------------------------------------------------------------------------------------------
-// GLOBAL PAGE STYLES
-
-html {
-    -webkit-text-size-adjust: none; // fix for font-size adjustment on iphone
-}
-
-body {
-    font-family: $font-family;
-    font-weight: normal;
-    color: $text-color;
-    background: $background-color;
-    margin: 0; padding: 0;
-}
-
-// ------------------------------------------------------------------------------------------------------
-// MEDIA QUERIES AND LAYOUTS
-
+@import "utilities/bootstrap";
+@import "../../components/fontawesome/scss/font-awesome";
+@import "utilities/mixins";
+@import "utilities/grid";
 @import "utilities/sprites";
-@import "utilities/layouts";
 
-@import "media/00-default";
-@import "media/01-handheld";
-@import "media/02-handheld-landscape";
-@import "media/03-tablet";
-@import "media/04-large";
-@import "media/05-massive";
-@import "media/06-hi-res";
+@import "components/global";
+@import "components/type";
+@import "components/elements";
+@import "components/pages";
+@import "components/editor";
+
+// ------------------------------------------------------------------------------------------------------
+// TEST COLUMN LAYOUT
+
+.test-col {
+	margin-bottom: 20px;
+}
+
+.test-col > .inner {
+	background: #EEE;
+	min-height: 40px;
+	padding: 10px 0px;
+	text-align: center;
+	color: #999;
+}

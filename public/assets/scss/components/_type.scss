@@ -1,0 +1,38 @@
+
+// ------------------------------------------------------------------------------------------------------
+// FONT IMPORTS & FONT FACE DECLARATIONS
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
+
+// ------------------------------------------------------------------------------------------------------
+// EXTENSIBLE FONT CLASSES
+
+.light-font {
+	font-family: $font-family-base;
+	font-weight: 300;
+}
+
+.regular-font {
+	font-family: $font-family-base;
+	font-weight: 400;
+}
+
+.bold-font {
+	font-family: $font-family-base;
+	font-weight: 700;
+}
+
+// ------------------------------------------------------------------------------------------------------
+// FONT STYLES
+
+h1,
+h2,
+h3 {
+	margin: 0 0 $grid-gutter-width;
+}
+
+h4,
+h5,
+h6 {
+	margin: 0 0 ($grid-gutter-width / 2);
+}
