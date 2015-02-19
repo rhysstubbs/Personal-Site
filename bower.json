@@ -15,7 +15,9 @@
     "imagesloaded": "~3.1.8",
     "magnific-popup": "~1.0.0",
     "bootstrap-sass": "~3.3.3",
-    "FlexSlider": "*"
+    "FlexSlider": "*",
+    "bourbon": "~4.2.0",
+    "parsleyjs": "~2.0.7"
   },
   "devDependencies": {}
 }

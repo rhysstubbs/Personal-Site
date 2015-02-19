@@ -28,11 +28,9 @@ fuel/packages/sprockets
 fuel/packages/cmf
 db/backups
 node_modules
-public/components/*
 public/templates
+public/components/*
+public/components/*/*
 
-# Font awesome assets
-
-!public/components/fontawesome
-public/components/fontawesome/*
-!public/components/fontawesome/fonts
+# Don't ignore font assets
+!/public/components/*/fonts
