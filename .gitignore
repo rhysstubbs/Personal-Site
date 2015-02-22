@@ -29,8 +29,8 @@ fuel/packages/cmf
 db/backups
 node_modules
 public/templates
-public/components/*
 public/components/*/*
+.vagrant
 
 # Don't ignore font assets
 !/public/components/*/fonts
