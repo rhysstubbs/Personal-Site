@@ -50,8 +50,8 @@ module.exports = function(grunt) {
         },
         files: {
           'public/assets/css/vendor.min.css': [
-            'public/components/FlexSlider/flexslider.css',
-            'public/components/magnific-popup/dist/magnific-popup.css'
+            'bower_components/FlexSlider/flexslider.css',
+            'bower_components/magnific-popup/dist/magnific-popup.css'
           ]
         }
       }
@@ -71,32 +71,32 @@ module.exports = function(grunt) {
           'public/assets/js/dist/vendor.min.js': [
 
             // Core libs
-            'public/components/html5shiv/dist/html5shiv.js',
-            'public/components/respond/dest/respond.src.js',
-            'public/components/eventEmitter/EventEmitter.js',
-            'public/components/jquery/dist/jquery.js',
+            'bower_components/html5shiv/dist/html5shiv.js',
+            'bower_components/respond/dest/respond.src.js',
+            'bower_components/eventEmitter/EventEmitter.js',
+            'bower_components/jquery/dist/jquery.js',
 
             // Bootstrap JS
-            'public/components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
-            'public/components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
-            'public/components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
-            'public/components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
-            //'public/components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
-            'public/components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+            //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
 
             // Other JS libs
-            'public/components/parsleyjs/dist/parsley.js',
-            'public/components/jquery.easing/js/jquery.easing.js',
-            'public/components/jquery-placeholder/jquery.placeholder.js',
-            'public/components/imagesloaded/imagesloaded.js',
-            'public/components/magnific-popup/dist/jquery.magnific-popup.js',
-            'public/components/FlexSlider/jquery.flexslider.js'
+            'bower_components/parsleyjs/dist/parsley.js',
+            'bower_components/jquery.easing/js/jquery.easing.js',
+            'bower_components/jquery-placeholder/jquery.placeholder.js',
+            'bower_components/imagesloaded/imagesloaded.js',
+            'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+            'bower_components/FlexSlider/jquery.flexslider.js'
           ]
         }
       },
@@ -136,7 +136,8 @@ module.exports = function(grunt) {
             'fuel/app/views/**/*.php',
             'public/cuts/**/*.html',
             'public/cuts/**/*.php',
-            'public/assets/**/*.css'
+            'public/assets/**/screen.min.css',
+            'public/assets/**/print.min.css'
           ]
         }]
       }
@@ -152,6 +153,21 @@ module.exports = function(grunt) {
         padding: 2,
         algorithm: 'binary-tree'
       }
+    },
+
+    // Copy vendor files
+    copy: {
+      fonts: {
+        expand: true,
+        src: [
+          'bower_components/fontawesome/fonts/**/*.{eot,svg,ttf,woff,woff2}',
+          'bower_components/FlexSlider/fonts/**/*.{eot,svg,ttf,woff,woff2}',
+          'bower_components/bootstrap-sass/**/*.{eot,svg,ttf,woff,woff2}'
+        ],
+        dest: 'public/assets/fonts/',
+        flatten: true,
+        filter: 'isFile',
+      },
     },
 
     // Watch task
@@ -171,7 +187,7 @@ module.exports = function(grunt) {
         tasks: ['sprite']
       },
       vendorjs: {
-        files: ['public/components/**/*.js'],
+        files: ['bower_components/**/*.js'],
         tasks: ['uglify:vendor']
       },
       corejs: {
@@ -179,8 +195,12 @@ module.exports = function(grunt) {
         tasks: ['uglify:core']
       },
       vendorcss: {
-        files: ['public/components/**/*.css'],
+        files: ['bower_components/**/*.css'],
         tasks: ['cssmin:vendor']
+      },
+      vendorfonts: {
+        files: ['public/components/**/*.{eot,svg,ttf,woff,woff2}'],
+        tasks: ['copy:fonts']
       }
     }
 
@@ -188,6 +208,7 @@ module.exports = function(grunt) {
 
   // Plugin loading
   grunt.loadNpmTasks('grunt-spritesmith');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -197,7 +218,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   // Task definition
-  grunt.registerTask('dist', ['sprite', 'sass_globbing', 'sass:dist', 'uglify:vendor', 'uglify:core', 'cssmin:vendor', 'cacheBust']);
+  grunt.registerTask('dist', ['sprite', 'sass_globbing', 'sass:dist', 'uglify:vendor', 'uglify:core', 'cssmin:vendor', 'copy:fonts', 'cacheBust']);
   grunt.registerTask('dev', ['dist', 'watch']);
   grunt.registerTask('default', ['dev']);
 

@@ -28,9 +28,6 @@ fuel/packages/sprockets
 fuel/packages/cmf
 db/backups
 node_modules
+bower_components
 public/templates
-public/components/*/*
 .vagrant
-
-# Don't ignore font assets
-!/public/components/*/fonts

@@ -14,9 +14,11 @@ Built by Sound in Theory
     bower install
     composer update
     ```
-3. To start front end dev work, run:
+3. To start front end dev work, run ```grunt```
+4. Before deploying to production, run ```grunt dist```
 
-    ```
-    grunt watch
-    ```
-    
+## SASS Mixins
+
+We use http://bourbon.io to provide some lightweight mixins for certain CSS features like ```transform```.
+
+The docs for this can be found here: http://bourbon.io/docs/
