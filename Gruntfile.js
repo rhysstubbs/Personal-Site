@@ -74,6 +74,7 @@ module.exports = function(grunt) {
             'bower_components/html5shiv/dist/html5shiv.js',
             'bower_components/respond/dest/respond.src.js',
             'bower_components/eventEmitter/EventEmitter.js',
+            'bower_components/eventie/eventie.js',
             'bower_components/jquery/dist/jquery.js',
 
             // Bootstrap JS
