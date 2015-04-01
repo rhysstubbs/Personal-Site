@@ -17,3 +17,19 @@
   height: nth($sprite, 6);
 } 
 
+$arrow-left: 37px 0px -37px 0px 12px 19px 60px 66px '../../images/sprite.png';
+.sprite.arrow-left { @include sprite($arrow-left); }
+$arrow-right: 0px 47px 0px -47px 12px 19px 60px 66px '../../images/sprite.png';
+.sprite.arrow-right { @include sprite($arrow-right); }
+$facebook: 0px 0px 0px 0px 12px 22px 60px 66px '../../images/sprite.png';
+.sprite.facebook { @include sprite($facebook); }
+$google-plus: 14px 0px -14px 0px 21px 22px 60px 66px '../../images/sprite.png';
+.sprite.google-plus { @include sprite($google-plus); }
+$menu: 23px 24px -23px -24px 25px 20px 60px 66px '../../images/sprite.png';
+.sprite.menu { @include sprite($menu); }
+$pinterest: 0px 24px 0px -24px 21px 21px 60px 66px '../../images/sprite.png';
+.sprite.pinterest { @include sprite($pinterest); }
+$play: 51px 0px -51px 0px 9px 11px 60px 66px '../../images/sprite.png';
+.sprite.play { @include sprite($play); }
+$twitter: 14px 47px -14px -47px 21px 17px 60px 66px '../../images/sprite.png';
+.sprite.twitter { @include sprite($twitter); }
