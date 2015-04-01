@@ -1,0 +1,45 @@
+
+// ------------------------------------------------------------------------------------------------------
+// FONT IMPORTS & FONT FACE DECLARATIONS
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
+
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('/assets/fonts/flexslider-icon.eot');
+  src: url('/assets/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/flexslider-icon.woff') format('woff'), url('/assets/fonts/flexslider-icon.ttf') format('truetype'), url('/assets/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ------------------------------------------------------------------------------------------------------
+// EXTENSIBLE FONT CLASSES
+
+.light-font { font-family: $font-family-sans-serif; font-weight: 200; }
+.regular-font { font-family: $font-family-sans-serif; font-weight: 400; }
+.medium-font { font-family: $font-family-sans-serif; font-weight: 500; }
+.bold-font { font-family: $font-family-sans-serif; font-weight: 700; }
+
+.heading-font { @extend .regular-font; }
+.heading-font-2 { @extend .bold-font; }
+
+// ------------------------------------------------------------------------------------------------------
+// FONT STYLES
+
+h1,
+h2,
+h3 {
+	margin: 0 0 $grid-gutter-width;
+}
+
+h4,
+h5,
+h6 {
+	margin: 0 0 ($grid-gutter-width / 2);
+}
+
+h1 { @extend .heading-font; font-size: 32px; line-height: 33px; margin: 0 0 20px; }
+h2 { @extend .heading-font; font-size: 21px; line-height: 28px; margin: 0 0 18px; }
+h3 { @extend .heading-font; font-size: 19px; line-height: 26px; margin: 0 0 18px; }
+h4 { @extend .heading-font-2; font-size: 17px; line-height: 24px; margin: 0 0 16px; }
+h5 { @extend .heading-font-2; font-size: 15px; line-height: 22px; margin: 0 0 14px; }

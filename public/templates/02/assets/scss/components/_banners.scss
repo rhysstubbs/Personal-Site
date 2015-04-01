@@ -1,0 +1,67 @@
+#top-banner{
+	.homepage-slider{
+		.slides{
+			li{
+				position:relative;
+				@extend .clearfix;
+				img{
+					@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;
+					position:absolute;
+					width:100%;
+					height:auto;
+					padding: 0;
+					margin:0;
+					@extend .hidden-xs;@extend .hidden-hs;
+				}
+				.slide-content{
+					position:relative;
+					@extend .col-centered;
+					@extend .text-center;
+					color: #000;
+					max-width: 520px;
+					margin: 5% auto 5%;
+					padding: 30px;
+					background: rgba(255, 255, 255, 0.8);
+					
+					.title {
+						@extend .heading-font; font-size: 42px; line-height: 40px;
+						max-width: 650px;
+						margin: 0 0 24px;
+					}
+
+					.text {
+						font-size: 20px; line-height: 24px;
+						max-width: 420px;
+						margin: 0 0 30px;
+						@media #{$xs-down} {
+							margin: 30px auto 30px;
+						}
+					}
+
+					.cta{
+						@extend .btn;
+					}
+				}
+			}
+		}
+		.flex-control-nav{
+			bottom:-30px;
+			@extend .hidden-xs;@extend .hidden-hs;
+		}
+
+		.flex-direction-nav{
+			li{
+				a{
+					line-height: initial;
+				}
+			}
+		}
+		.flex-direction-nav .flex-prev {
+			left:30px;
+		}
+
+		.flex-direction-nav .flex-next {
+			right:30px;
+		}
+	}
+}

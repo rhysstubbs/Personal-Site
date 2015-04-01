@@ -29,5 +29,4 @@ fuel/packages/cmf
 db/backups
 node_modules
 bower_components
-public/templates
 .vagrant

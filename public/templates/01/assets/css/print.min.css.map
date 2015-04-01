@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "print.min.css",
+	"sources": [
+		"../../../../../print.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "",
+	"names": []
+}
