@@ -39,7 +39,7 @@
 
 	<section id="homepage">
 		<div class="container">
-			<div class="body-list overlay top">
+			<div class="body-list overlay top row">
 				<a class="item" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
@@ -66,7 +66,7 @@
 				</a>
 			</div>
 
-			<div class="body-list middle">
+			<div class="body-list middle row">
 				<div class="block-heading">
 					<h3 class="heading">This is the heading of the next section</h3>
 				</div>
@@ -120,7 +120,7 @@
 				</a>
 			</div>
 
-			<div class="body-list bottom">
+			<div class="body-list bottom row">
 				<div class="block-heading">
 					<h3 class="heading">Additional Things</h3>
 				</div>
@@ -152,7 +152,7 @@
 				<!-- For 2-up lists (loop.index0 % 2 == 0) --><div class="clear hl-show h-show"></div>
 			</div>
 
-			<div class="body-list other">
+			<div class="body-list other row">
 				<div class="item" data-height-group="usp2">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean</p>

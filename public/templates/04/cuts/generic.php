@@ -1,12 +1,9 @@
 <?php include 'includes/header.php' ?>
 
-	<section class="outer">
-		<div class="wrap pad-top">
-
+	<section id="homepage">
+		<div class="container">
 			<h1 class="page-title">Page Title</h1>
-
-			<div class="col2-r">
-
+			<div class="row generic">
 				<div class="right">
 					<nav class="nav-secondary" role="navigation">
 						<ul>
