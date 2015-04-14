@@ -17,7 +17,10 @@ a{
 	}
 }
 
-
+.no-pad{
+	 margin-left: -$grid-gutter-width !important;
+    margin-right: -$grid-gutter-width !important;
+}
 
 // ------------------------------------------------------------------------------------------------------
 // FLEXSLIDER DEFAULTS
@@ -30,6 +33,7 @@ a{
 	}
 }
 
+//---------------------------------
 .page-title{
   font-size: 34px;
   line-height: 38px;

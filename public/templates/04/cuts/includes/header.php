@@ -23,9 +23,9 @@
 
    <header id="header">
         <div class="container">
-            <div class="top row">
+            <div class="top row no-pad">
                 <div class="left">
-                    <ul>
+                    <ul class="row">
                         <li><a href="#">Log in</a></li>
                         <li><a href="#">Register</a></li>
                     </ul>
@@ -52,16 +52,14 @@
                     </form>
                 </div> <!-- right -->
             </div> <!-- bottom -->
-            <div class="row">
-                <nav class="nav collapse navbar-collapse" id="navbar-collapse" role="navigation">
-                    <ul>
-                        <li class="on"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Other</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav class="nav collapse navbar-collapse no-pad" id="navbar-collapse" role="navigation">
+                <ul>
+                    <li class="on"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Other</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div> <!-- wrap -->
     </header> <!-- header -->

@@ -2,7 +2,7 @@
 
 	<section id="top-banner">
 		<div class="container">
-			<div class="row">
+			<div class="row no-pad">
 				<div class="homepage-slider flexslider">	
 				  <ul class="slides">
 				    <li>

@@ -1,6 +1,6 @@
 <footer id="footer">
 	<div class="container">
-		<div class="row">
+		<div class="row no-pad">
 			<div class="top-footer body-list">
 				<div class="item" data-height-group="usp1">
 					<div class="inner">
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="bottom-footer row">
+		<div class="bottom-footer row no-pad">
 			<div class="left">
 				<nav class="nav" role="navigation">
 					<ul>
