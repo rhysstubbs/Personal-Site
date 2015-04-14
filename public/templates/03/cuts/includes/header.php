@@ -23,38 +23,33 @@
 
     <header id="header">
         <div class="container">
-            <div class="body-list">
-
+            <div class="row">
                 <div class="logo">
                     <a href="/"><img src="../assets/images/logo.png" alt="Website Name" /></a>
                 </div> <!-- logo -->
 
                 <div class="right">
-                    <div class="container-fluid">
-                        <div class="body-list">
-                            <div class="top">
-                                <ul>
-                                    <li><a href="#">Log in</a></li>
-                                    <li><a href="#">Register</a></li>
-                                </ul>
-                            </div>
-                            <div class="middle">
-                                <span class="tel">tel. (01234) 123456</span>
-                            </div>
-                            <nav class="nav" role="navigation">
-                                <ul>
-                                    <li class="on"><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Products</a></li>
-                                    <li><a href="#">Other</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </nav>
+                    <div class="row">
+                        <div class="top">
+                            <ul>
+                                <li><a href="#">Log in</a></li>
+                                <li><a href="#">Register</a></li>
+                            </ul>
                         </div>
+                        <div class="middle">
+                            <span class="tel">tel. (01234) 123456</span>
+                        </div>
+                        <nav class="nav" role="navigation">
+                            <ul>
+                                <li class="on"><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Other</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                </div>
-
-            </div>
-
+                </div><!-- right -->
+            </div><!-- row -->
         </div> <!-- conatiner -->
     </header> <!-- header -->

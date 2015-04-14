@@ -6,20 +6,23 @@
 	background: #fff;
 
 	.logo {
-		padding: 50px 0;
 		@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-18;@extend .col-hs-18;
+		padding-top: 50px;
+		padding-bottom: 50px;
 		img{
 			max-width: 100%;
 		}
 		@media #{$xs-down} {
-			padding: 30px 0;
+			padding-top: 30px;
+			padding-bottom: 30px;
 		}
 	}
 
 	.right {
 		@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-16;
 		@extend .text-right;
-		padding: 24px 0;
+		padding-top: 24px;
+		padding-bottom: 24px;
 		ul{
 			@extend .list-unstyled; @extend .list-inline;
 		}
@@ -27,15 +30,19 @@
 
 	.expand-menu{
 		@extend .col-xs-4;@extend .col-hs-4;
-		padding: 50px 0;
+		padding-top: 50px;
+		padding-bottom: 50px;
 		@media #{$xs-down} {
-			padding: 30px 0;
+			padding-top: 30px;
+			padding-bottom: 30px;
 		}
 	}
 
 	.nav-mobile{
-		@extend .col-lg-6-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
-
+		@extend .col-xs-24;@extend .col-hs-24;
+		@media #{$sm-up} {
+			display: none !important;
+		}
 		ul{
 			@extend .list-unstyled;
 			@extend .text-center;
@@ -73,12 +80,13 @@
 		position: relative; top: -1px;
 		clear: both; float: right;
 		border-top: 1px solid #eee;
-		padding: 10px 0;
+		padding-top: 6px;
+		padding-bottom: 6px;
 
 		li {
 			@extend .medium-font;
 			font-size: 15px;
-			margin: 0 0 0 6px;
+			margin: 0;
 		}
 
 		li:first-child {

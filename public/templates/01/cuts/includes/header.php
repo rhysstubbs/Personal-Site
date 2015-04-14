@@ -23,17 +23,33 @@
 
     <header id="header">
         <div class="container">
-            <div class="logo">
-                <a href="/"><img src="../assets/images/logo.png" alt="Website Name" /></a>
-            </div>
-            <div class="right collapse navbar-collapse">
-                <div class="top">
-                    <ul>
-                        <li><a href="#">Log in / Register</a></li>
-                        <li><a href="tel:01392123456">01392 123456</a></li>
-                    </ul>
+            <div class="row">
+                <div class="logo">
+                    <a href="/"><img src="../assets/images/logo.png" alt="Website Name" /></a>
                 </div>
-                <nav class="nav" role="navigation">
+                <div class="right collapse navbar-collapse">
+                    <div class="top">
+                        <ul>
+                            <li><a href="#">Log in / Register</a></li>
+                            <li><a href="tel:01392123456">01392 123456</a></li>
+                        </ul>
+                    </div>
+                    <nav class="nav collapse navbar-collapse" role="navigation">
+                        <ul>
+                            <li class="on"><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Other</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="expand-menu navbar-toggle">
+                    <button type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <i class="sprite menu"></i>
+                    </button> 
+                </div>
+                <nav class="nav-mobile collapse navbar-collapse" id="navbar-collapse" role="navigation">
                     <ul>
                         <li class="on"><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
@@ -43,19 +59,5 @@
                     </ul>
                 </nav>
             </div>
-            <div class="expand-menu">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <i class="sprite menu"></i>
-                </button> 
-            </div>
-            <nav class="nav-mobile collapse navbar-collapse" id="navbar-collapse" role="navigation">
-                <ul>
-                    <li class="on"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Other</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header> <!-- header -->

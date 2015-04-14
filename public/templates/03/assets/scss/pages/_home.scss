@@ -134,7 +134,6 @@
 .body{
 	.body-top{
 		.body-list{
-			margin: 20px  (-($grid-gutter-width/2));
 			a{	
 				@extend .col-lg-8;@extend .col-md-8;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
 				h3{
@@ -149,7 +148,6 @@
 
 	.body-middle{
 		.body-list{
-			margin: 20px  (-($grid-gutter-width/2));
 			a{	
 				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-6;@extend .col-xs-12;@extend .col-hs-12;
 			}
