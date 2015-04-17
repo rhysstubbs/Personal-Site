@@ -1,6 +1,5 @@
 #top-banner{
 	.homepage-slider{
-		margin-bottom: 30px;
 		.slides{
 			li{
 				position:relative;
@@ -18,7 +17,8 @@
 					.slide-content{
 						@extend .col-lg-16;@extend .col-md-16;@extend .col-sm-12;@extend .col-xs-24;@extend .col-hs-24;				
 						color: #fff;
-						padding: 36px 0 56px;
+						padding-top: 36px;
+						padding-bottom: 56px;
 						@media #{$xs-down} {
 							color: #000;
 							text-align:center;
@@ -46,8 +46,8 @@
 					.box{
 						@extend .col-lg-8;@extend .col-md-8;@extend .col-sm-12;
 						@extend .hidden-xs;@extend .hidden-hs;
-						padding: 36px 0 56px;
-
+						padding-top: 36px;
+						padding-bottom: 56px;
 						p {
 							margin-bottom: 12px;
 							line-height: 20px;

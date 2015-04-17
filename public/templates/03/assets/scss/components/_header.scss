@@ -20,7 +20,6 @@
 
 		.top{
 			@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
-			padding:0;
 			li{
 				padding:0;
 				padding-left:1px;
@@ -35,7 +34,8 @@
 		.middle{
 			@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
 			color: #999;
-  			padding: 23px 0 20px;
+  			padding-top: 23px;
+  			padding-bottom: 20px;
   			.tel{
   				font-size: 26px;
   				line-height: 30px;
@@ -44,13 +44,12 @@
 		}
 		.nav{
 			@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
-			padding:0;
 			li{
 				padding:0;
 				font-size: 15px;
-				  line-height: 20px;
-				  margin: 0 0 0 28px;
-				  @extend .bold-font;
+				line-height: 20px;
+				margin: 0 0 0 28px;
+				@extend .bold-font;
 				a{
 					display: block;
   					padding: 6px 2px;

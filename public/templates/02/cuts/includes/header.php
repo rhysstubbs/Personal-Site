@@ -23,62 +23,46 @@
 
     <header id="header">
         <div class="container">
-            <div class="top">
-                <div class="container-fluid">
-                    <div class="item-list">
-                        <div class="left">
-                            <ul>
-                                <li><a href="#">Log in</a></li>
-                                <li><a href="#">Register</a></li>
-                            </ul>
-                        </div> <!-- left -->
-                        <div class="right">
-                            <ul>
-                                <li><a href="#">Basket - <b>&pound;100</b></a></li>
-                            </ul>
-                        </div> <!-- right -->
-                    </div>
-                </div>
-            </div> <!-- top -->
+            <div class="row top">
+                <div class="left">
+                    <ul>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#">Register</a></li>
+                    </ul>
+                </div> <!-- left -->
+                <div class="right">
+                    <ul>
+                        <li><a href="#">Basket - <b>&pound;100</b></a></li>
+                    </ul>
+                </div> <!-- right -->
+            </div> <!-- row -->
 
-            <div class="middle">
-                <div class="container-fluid">
-                    <div class="item-list">
-                        <div class="right">
-                            <form action="" class="form form-search collapse navbar-collapse">
-                                <input type="text" name="q" placeholder="Search for stuff..." />
-                            </form>
-                            <div class="expand-menu">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                                    <i class="sprite menu"></i>
-                                </button> 
-                            </div>
-                        </div> <!-- right -->
-                        <div class="left"></div>
-                        <div class="logo">
-                            <a href="/"><img src="../assets/images/logo.png" alt="Website Name" /></a>
-                        </div> <!-- logo -->
+            <div class="row middle">
+                <div class="right">
+                    <form action="" class="form form-search collapse navbar-collapse">
+                        <input type="text" name="q" placeholder="Search for stuff..." />
+                    </form>
+                    <div class="expand-menu">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="sprite menu"></i>
+                        </button> 
                     </div>
-                </div>
+                </div> <!-- right -->
+                <div class="left"></div>
+                <div class="logo">
+                    <a href="/"><img src="../assets/images/logo.png" alt="Website Name" /></a>
+                </div> <!-- logo -->
             </div> <!-- middle -->
-
-            <nav class="nav collapse navbar-collapse" role="navigation">
-                <ul>
-                    <li class="on"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Other</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <nav class="nav-mobile navbar-toggle" id="navbar-collapse" role="navigation">
-                <ul>
-                    <li class="on"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Other</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="row">
+                <nav class="nav collapse navbar-collapse navbar-toggle" id="navbar-collapse" role="navigation">
+                    <ul>
+                        <li class="on"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Other</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div> <!-- conatiner -->
     </header> <!-- header -->

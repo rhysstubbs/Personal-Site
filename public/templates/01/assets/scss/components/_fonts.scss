@@ -2,8 +2,6 @@
 // ------------------------------------------------------------------------------------------------------
 // FONT IMPORTS & FONT FACE DECLARATIONS
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
-
 @font-face {
   font-family: 'flexslider-icon';
   src: url('/assets/fonts/flexslider-icon.eot');
@@ -21,7 +19,8 @@
 .bold-font { font-family: $font-family-sans-serif; font-weight: 700; }
 
 .heading-font { @extend .regular-font; }
-.heading-font-2 { @extend .bold-font; }
+.heading-font-2 { @extend .medium-font; }
+.heading-font-3 { @extend .bold-font; }
 
 // ------------------------------------------------------------------------------------------------------
 // FONT STYLES

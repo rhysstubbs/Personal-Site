@@ -3,20 +3,15 @@
 // FOOTER
 
 #footer {
-	padding: 0 0 36px;
+	padding-bottom: 36px;
 	.top-footer{
-		.body-list{
-			display:table;
-			width:100%;
-			 margin: 30px 0;
-			div{
-				display:table-cell;
-				float: none;
+		.item-list{
+			.item{
 				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
-				margin: 20px 0;
 				padding: 0 20px;
 				border-left: 2px solid #aaa;
 				text-align:center;
+				margin-bottom: 25px;
 				.heading{
 					font-size: 18px;
 						margin: 0 0 10px;
@@ -37,9 +32,9 @@
 						}
 					}
 				}
-			}
-			div:first-child{
-				border-left: none;
+				&:first-child{
+					border-left: none;
+				}
 			}
 
 			ul{
@@ -65,37 +60,34 @@
 	}
 
 	.bottom-footer{
-
 		color: #fff;
-		.container{
-			.body-list{
-				@extend .clearfix;
-				background: #333;
+		div{
+			@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
+			.copy{
+				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
+				text-align:right;
+				background:#333;
 				padding: 10px 0;
-				margin: 0;
 			}
-		}
-		.copy{
-			margin:0;
-			@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
-			text-align:right;
-		}
-		.nav{
-			@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
-			overflow: hidden;
-			ul{
-				margin:0;
-				@extend .list-unstyled; @extend .list-inline;
-				li {
-					margin: 0 0 0 20px;
+			.nav{
+				@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
+				overflow: hidden;
+				background:#333;
+				padding: 10px 0;
+				ul{
+					margin:0;
+					@extend .list-unstyled; @extend .list-inline;
+					li {
+						margin: 0 0 0 20px;
 
-					a {
-						display: block;
-						color: #fff;
-					}
+						a {
+							display: block;
+							color: #fff;
+						}
 
-					a:hover {
-						text-decoration: underline;
+						a:hover {
+							text-decoration: underline;
+						}
 					}
 				}
 			}

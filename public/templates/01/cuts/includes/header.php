@@ -49,7 +49,7 @@
                         <i class="sprite menu"></i>
                     </button> 
                 </div>
-                <nav class="nav-mobile collapse navbar-collapse" id="navbar-collapse" role="navigation">
+                <nav class="nav-mobile collapse navbar-toggle" id="navbar-collapse" role="navigation">
                     <ul>
                         <li class="on"><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>

@@ -3,7 +3,7 @@
 // RICH TEXT EDITOR CONTENT
 
 .editor {
-	
+	@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
 	&.cke_editable {
 		max-width: 755px;
 		@extend .clearfix;
@@ -21,11 +21,11 @@
 		padding-bottom: 24px;
 	}
 	
-	h1, .h1 { @extend .h1; }
-	h2, .h2 { @extend .h2; }
-	h3, .h3 { @extend .h3; }
-	h4, .h4 { @extend .h4; }
-	h5, .h5 { @extend .h5; }
+	h1, .h1 { @extend .h1;}
+	h2, .h2 { @extend .h2;}
+	h3, .h3 { @extend .h3;}
+	h4, .h4 { @extend .h4; @extend .bold-font;}
+	h5, .h5 { @extend .h5; @extend .bold-font;}
 	h6, .h6 { @extend .h6; }
 	
 	p, li {

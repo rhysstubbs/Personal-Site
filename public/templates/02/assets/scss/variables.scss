@@ -36,7 +36,7 @@ $text-color:            $gray-dark !default;
 //** Global textual link color.
 $link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      #000 !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
@@ -335,7 +335,7 @@ $lg: "(min-width: #{$screen-lg-min})";
 //** Number of columns in the grid.
 $grid-columns:              24 !default;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         20px !default;
+$grid-gutter-width:         25px !default;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-sm-min !default;
@@ -348,17 +348,17 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 //## Define the maximum width of `.container` for different screen sizes.
 
 // Small screen / tablet
-$container-tablet:             (700px + $grid-gutter-width + $grid-gutter-width) !default;
+$container-tablet:             (700px + ($grid-gutter-width*2)) !default;
 //** For `$screen-sm-min` and up.
 $container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
-$container-desktop:            (940px + $grid-gutter-width + $grid-gutter-width) !default;
+$container-desktop:            (940px + ($grid-gutter-width*2)) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1175px + $grid-gutter-width + $grid-gutter-width) !default;
+$container-large-desktop:      (1175px + ($grid-gutter-width*2)) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
 

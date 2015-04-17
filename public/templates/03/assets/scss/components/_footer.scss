@@ -3,15 +3,14 @@
 // FOOTER
 
 #footer {
-	.top-footer{
-		background: #F0F0F0;
-		.body-list{
-			display:table;
-			width:100%;
-			padding: 30px 0;
-			div{
-				display:table-cell;
-				float: none;
+	.top-footer{	
+		.item-list{
+			.background{
+				width:100%;
+				background: #F0F0F0;
+				@extend .clearfix;	
+			}
+			.item{
 				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
 				margin: 20px 0;
 				padding: 0 20px;
@@ -26,11 +25,10 @@
 						line-height: 20px;
 						margin-bottom: 0;
 				}
+				&:first-child{
+					border-left: none;
+				}
 			}
-			div:first-child{
-				border-left: none;
-			}
-
 			ul{
 				@extend .list-unstyled; @extend .list-inline;
 			}
@@ -38,23 +36,20 @@
 	}
 
 	.bottom-footer{
-		background: #333;
-		color: #fff;
-		.container{
-			.body-list{
-				@extend .clearfix;
-				padding: 10px 0;
-				margin: 0;
-			}
+		.background{
+			background: #333;
+			color: #fff;
 		}
 		.copy{
 			margin:0;
 			@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
 			text-align:right;
+			padding-top:10px;
+			padding-bottom:10px;
 		}
 		.nav{
 			@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
-			overflow: hidden;
+			overflow: hidden;	
 			ul{
 				margin:0;
 				@extend .list-unstyled; @extend .list-inline;
@@ -64,6 +59,7 @@
 					a {
 						display: block;
 						color: #fff;
+						padding: 10px 0;
 					}
 
 					a:hover {

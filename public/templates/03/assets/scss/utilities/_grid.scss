@@ -1,3 +1,8 @@
+.container{
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+
 @include make-fraction-grid(xs);
 
 @media (min-width: $screen-sm-min) {

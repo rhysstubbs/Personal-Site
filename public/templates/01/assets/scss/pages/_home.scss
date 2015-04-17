@@ -4,19 +4,14 @@
 
 body{
 
-	.large{
-		font-size: 26px; line-height: 30px;
-		margin: 20px 0 30px 0;
-	}
-
 	.body-top{
-		a{	
+		.item{	
 			@extend .col-lg-8;@extend .col-md-8;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
 		}
 	}
 
 	.body-middle{
-		a{	
+		.item{	
 			@extend .col-lg-8;@extend .col-md-8;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
 		}
 	}
