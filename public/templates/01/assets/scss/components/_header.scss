@@ -8,6 +8,10 @@
 		@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-18;@extend .col-hs-18;
 		padding-top: 50px;
 		padding-bottom: 50px;
+		@media #{$xs-down} {
+			padding-top: 50px;
+			padding-bottom: 10px;
+		}
 		img{
 			max-width: 100%;
 		}
@@ -58,6 +62,16 @@
 		@extend .col-xs-4;@extend .col-hs-4;
 		padding-top: 50px;
 		padding-bottom: 50px;
+		@media #{$xs-down} {
+			padding-top: 50px;
+			padding-bottom: 10px;
+		}
+		margin:0;
+		button{
+			-webkit-appearance: none;
+			  background: transparent;
+			  border: none;
+		}
 	}
 	.nav-mobile{
 		@extend .col-xs-24;@extend .col-hs-24;
