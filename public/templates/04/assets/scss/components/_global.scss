@@ -18,8 +18,16 @@ a{
 }
 
 .no-pad{
-	 margin-left: -$grid-gutter-width !important;
+	margin-left: -$grid-gutter-width !important;
     margin-right: -$grid-gutter-width !important;
+}
+
+.pad-top{
+	padding-top:$grid-gutter-width;
+}
+
+.pad-bot{
+	padding-bottom:$grid-gutter-width;
 }
 
 // ------------------------------------------------------------------------------------------------------

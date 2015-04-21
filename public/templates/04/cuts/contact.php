@@ -1,7 +1,7 @@
 <?php include 'includes/header.php' ?>
 
 	<section id="contact">
-		<div class="container pad-bot">
+		<div class="container pad-top pad-bot">
 			<div class="row">
 				<h1 class="page-title">Contact Form</h1>
 				<div class="form">
