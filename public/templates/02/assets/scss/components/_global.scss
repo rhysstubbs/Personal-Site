@@ -209,3 +209,70 @@ a{
 		
 	}
 }
+
+.page-title{
+  font-size: 34px;
+  line-height: 38px;
+  margin: 0 0 20px;
+  padding: 0 0 16px;
+}
+
+.nav-secondary {
+  margin: 0 0 24px;
+  ul{
+  	@extend .list-unstyled;
+  	li{
+  		font-size: 14px;
+	  line-height: 18px;
+	  border-bottom: 1px solid #eee;
+	  @extend .regular-font;
+	  a{
+	  		display: block;
+  			padding: 10px 0;
+	  	}
+	  &.on{
+	  	@extend .bold-font;
+	  }
+  	}
+  }
+}
+
+.responsive-table{
+	@media #{$hs} {
+		  max-width: 100%; // adjust to your needs
+		  tr {
+		    border-top: 1px solid #ddd;
+		    border-bottom: 1px solid #ddd;
+		  }  
+		  th {
+		    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+		  }
+		  
+		  td {
+		    display: block; 
+		    border:none !important;
+		    
+		    &:first-child {
+		      padding-top: .5em;
+		    }
+		    &:last-child {
+		      padding-bottom: .5em;
+		    }
+
+		    &:before {
+		      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+		      font-weight: bold;
+
+		      // optional stuff to make it look nicer
+		      width: 6.5em; // magic number :( adjust according to your own content
+		      display: inline-block;
+		    }
+		  }
+		  
+		  th, td {
+		    text-align: left;
+
+		  }	  	  
+	}
+}
+

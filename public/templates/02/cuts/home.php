@@ -6,7 +6,7 @@
 				<div class="flexslider">
 				  <ul class="slides">
 				    <li>
-				      <img src="http://placehold.it/1175x500&text=Slide+1" />
+				      <img src="http://placehold.it/1175x500&text=Slide+1" class="slide-img"/>
 				      	<div class="slide-content">
 							<h1 class="title">I'm a title or a message in a striking font</h1>
 							<p class="text">Space for some more text to go here, or maybe here. Definitely not here though!</p>
@@ -14,7 +14,7 @@
 						</div>
 				    </li>
 				    <li>
-				      <img src="http://placehold.it/1175x500&text=Slide+2" />
+				      <img src="http://placehold.it/1175x500&text=Slide+2" class="slide-img"/>
 				      	<div class="slide-content">
 							<h1 class="title">Another Slide Title</h1>
 							<p class="text">Some text to go underneath the title here</p>
@@ -22,7 +22,7 @@
 						</div>
 				    </li>
 				    <li>
-				      <img src="http://placehold.it/1175x500&text=1175x500" />
+				      <img src="http://placehold.it/1175x500&text=1175x500" class="slide-img"/>
 				      	<div class="slide-content">
 							<h1 class="title">I'm a title or a message in a striking font</h1>
 							<p class="text">Space for some more text to go here, or maybe here. Definitely not here though!</p>

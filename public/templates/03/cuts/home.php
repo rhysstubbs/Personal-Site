@@ -1,7 +1,7 @@
 <?php include 'includes/header.php' ?>
 
 	<section id="top-banner" class="container">
-		<div class="row">
+		<div class="row no-pad">
 			<div class="homepage-slider">
 				<div class="flexslider">
 					<ul class="slides">

@@ -3,15 +3,11 @@
 // FOOTER
 
 #footer {
-	.top-footer{	
+	.top-footer{
+		background: #F0F0F0;	
 		.item-list{
-			.background{
-				width:100%;
-				background: #F0F0F0;
-				@extend .clearfix;	
-			}
 			.item{
-				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;
+				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-12;@extend .col-xs-12;@extend .col-hs-12;
 				margin: 20px 0;
 				padding: 0 20px;
 				border-left: 1px solid #aaa;
@@ -28,6 +24,33 @@
 				&:first-child{
 					border-left: none;
 				}
+				.newsletter{
+					input{
+						font-size: 14px;
+						  line-height: 18px;
+						  padding: 7px 10px;
+						  border: 2px solid rgb(221, 221, 221);
+						  width: 140px;
+					}
+					button{
+						background-color: rgb(204, 204, 204);
+						-webkit-appearance: none;
+						 border: none;
+						 width: 35px;
+ 						 height: 36px;
+ 						 padding:0;
+ 						 margin-left: -6px;
+					}
+				}
+				.social{
+					li{
+						padding:0;
+						margin-right: 20px;
+						&:last-child{
+							margin-right: 0;	
+						}
+					}
+				}
 			}
 			ul{
 				@extend .list-unstyled; @extend .list-inline;
@@ -36,10 +59,8 @@
 	}
 
 	.bottom-footer{
-		.background{
-			background: #333;
-			color: #fff;
-		}
+		background: #333;
+		color: #fff;
 		.copy{
 			margin:0;
 			@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-12;@extend .col-hs-12;

@@ -7,16 +7,16 @@
 				padding:0;
 				@extend .clearfix;
 				img{
-					width:50%;
-					padding: 0;
+					@extend .col-lg-12;@extend .col-md-12;@extend .col-sm-12;
 					margin:0;
 					@extend .hidden-xs;@extend .hidden-hs;
 					float:right;
 				}
 
 				.slide-content{
-					width:50%;
-					padding: 30px;
+					@extend .col-lg-12;@extend .col-md-12;@extend .col-sm-12;@extend .col-xs-24;@extend .col-hs-24;
+					padding-top: 30px;
+					padding-bottom: 30px;
 					position:relative;
 					color: #000;
 					float:left;
@@ -50,8 +50,14 @@
 
 		.flex-control-paging{
 			@extend .hidden-xs;@extend .hidden-hs;
-			bottom:0px;
+			bottom:0;
 			left:25%;
+			@media #{$md} {
+				bottom:20px;
+			}
+			@media #{$sm} {
+				bottom:150px;
+			}
 		}
 
 		.flex-direction-nav{
