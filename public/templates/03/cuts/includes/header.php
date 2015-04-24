@@ -27,19 +27,23 @@
                 <div class="logo">
                     <a href="/"><img src="../assets/images/logo.png" alt="Website Name" /></a>
                 </div> <!-- logo -->
-
+                <div class="expand-menu  navbar-toggle">
+                    <button type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <i class="sprite menu"></i>
+                    </button> 
+                </div>
                 <div class="right">
                     <div class="row">
-                        <div class="top">
+                        <div class="top collapse navbar-collapse">
                             <ul>
                                 <li><a href="#">Log in</a></li>
                                 <li><a href="#">Register</a></li>
                             </ul>
                         </div>
-                        <div class="middle">
+                        <div class="middle collapse navbar-collapse">
                             <span class="tel">tel. (01234) 123456</span>
                         </div>
-                        <nav class="nav" role="navigation">
+                        <nav class="nav collapse navbar-collapse navbar-toggle" role="navigation" id="navbar-collapse">
                             <ul>
                                 <li class="on"><a href="#">Home</a></li>
                                 <li><a href="#">About</a></li>

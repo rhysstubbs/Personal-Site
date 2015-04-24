@@ -10,7 +10,7 @@
 							<li><a href="#"><img src="http://placehold.it/100x35&text=100x35" /></a></li>
 						</ul>
 					</div>
-					<div class="item">
+					<div class="item" data-height-group="3">
 						<h3 class="heading">Telephone</h3>
 						<p class="tel">(01234) 123456</p>
 					</div>

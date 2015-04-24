@@ -6,16 +6,29 @@
 	border-bottom:1px #DDDDDD solid;
 	margin-bottom: 30px;
 	ul{
-		@extend .list-unstyled; @extend .list-inline;
+		@extend .list-unstyled;
 	}
 	.logo{
-		@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-6;@extend .col-xs-6;@extend .col-hs-6;
+		@extend .col-lg-8;@extend .col-md-8;@extend .col-sm-8;@extend .col-xs-18;@extend .col-hs-18;
 		padding-top: 64px;
 		padding-bottom: 64px;
+		img{
+			max-width: 100%;
+		}
+		@media #{$xs-down} {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
 	}
-
+	.expand-menu{
+		@extend .col-xs-6;@extend .col-hs-6;
+		margin:0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: right;
+	}
 	.right{
-		@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-18;@extend .col-xs-18;@extend .col-hs-18;
+		@extend .col-lg-16;@extend .col-md-16;@extend .col-sm-16;@extend .col-xs-24;@extend .col-hs-24;
 		@extend .text-right;
 
 		.top{
@@ -23,6 +36,7 @@
 			li{
 				padding:0;
 				padding-left:1px;
+				display: inline-block;
 			}
 			a{
 				padding: 7px 10px;
@@ -49,10 +63,17 @@
 				font-size: 15px;
 				line-height: 20px;
 				margin: 0 0 0 28px;
+				display: inline-block;
 				@extend .bold-font;
 				a{
 					display: block;
   					padding: 6px 2px;
+				}
+			}
+			@media #{$xs-down} {
+				text-align: center;
+				li{
+					display: block;
 				}
 			}
 		}
