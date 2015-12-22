@@ -71,7 +71,9 @@
 					animationSpeed: 800,
 					smoothHeight: false,
 					controlNav: true, // Generates pagination
-					directionNav: true // Generates next / prev arrows
+					directionNav: true, // Generates next / prev arrows
+					animationLoop: false,
+					useCSS: false
 				});
 
 			});
