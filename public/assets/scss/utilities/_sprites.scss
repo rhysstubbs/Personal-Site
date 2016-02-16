@@ -1,35 +1,123 @@
-.sprite {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-  background: url('../images/sprite.png');
-  text-indent: -9999px;
+$spritesheet-width: 0px;
+$spritesheet-height: 0px;
+$spritesheet-image: '../../images/sprite.png';
+$spritesheet-sprites: ();
+$spritesheet: (0px, 0px, '../../images/sprite.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 0px;
+$retina-spritesheet-height: 0px;
+$retina-spritesheet-image: '../../images/sprite@2x.png';
+$retina-spritesheet-sprites: ();
+$retina-spritesheet: (0px, 0px, '../../images/sprite@2x.png', $retina-spritesheet-sprites, );
+
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+$retina-groups: ();
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
 }
 
-@mixin sprite($sprite) {
-  @extend .sprite;
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
 
+@mixin sprite-position($sprite) {
   $sprite-offset-x: nth($sprite, 3);
   $sprite-offset-y: nth($sprite, 4);
   background-position: $sprite-offset-x  $sprite-offset-y;
+}
 
-  width: nth($sprite, 5);
-  height: nth($sprite, 6);
-} 
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
 
-$arrow-left: 50px 24px -50px -24px 12px 19px 76px 44px '../../images/sprite.png';
-.sprite.arrow-left { @include sprite($arrow-left); }
-$arrow-right: 64px 0px -64px 0px 12px 19px 76px 44px '../../images/sprite.png';
-.sprite.arrow-right { @include sprite($arrow-right); }
-$facebook: 50px 0px -50px 0px 12px 22px 76px 44px '../../images/sprite.png';
-.sprite.facebook { @include sprite($facebook); }
-$google-plus: 0px 22px 0px -22px 21px 22px 76px 44px '../../images/sprite.png';
-.sprite.google-plus { @include sprite($google-plus); }
-$menu: 0px 0px 0px 0px 25px 20px 76px 44px '../../images/sprite.png';
-.sprite.menu { @include sprite($menu); }
-$pinterest: 27px 0px -27px 0px 21px 21px 76px 44px '../../images/sprite.png';
-.sprite.pinterest { @include sprite($pinterest); }
-$play: 64px 21px -64px -21px 9px 11px 76px 44px '../../images/sprite.png';
-.sprite.play { @include sprite($play); }
-$twitter: 27px 23px -27px -23px 21px 17px 76px 44px '../../images/sprite.png';
-.sprite.twitter { @include sprite($twitter); }
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}
+
+// The base class for all sprites
+.sprite {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  background-image: url($spritesheet-image);
+  text-indent: -9999px;
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    $sprite-total-width: nth($spritesheet, 1);
+    $sprite-total-height: nth($spritesheet, 2);
+    background-image: url($retina-spritesheet-image);
+    background-size: $sprite-total-width $sprite-total-height;
+  }
+}
+

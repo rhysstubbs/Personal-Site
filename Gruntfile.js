@@ -57,6 +57,19 @@ module.exports = function(grunt) {
       }
     },
 
+    // Split CSS
+    csssplit: {
+      dev: {
+        src: ['public/assets/css/screen.min.css'],
+        dest: 'public/assets/css/screen.css',
+        options: {
+          maxSelectors: 4095,
+          maxPages: 1,
+          suffix: '_page'
+        }
+      },
+    },
+
     // Concatenate and compress JS
     uglify: {
 
@@ -157,6 +170,20 @@ module.exports = function(grunt) {
       }
     },
 
+    // Build sprite file
+    sprite: {
+      all: {
+        src: 'public/assets/images/sprites/**/*.png',
+        dest: 'public/assets/images/sprite.png',
+        destCss: 'public/assets/scss/utilities/_sprites.scss',
+        cssTemplate: 'public/assets/scss/utilities/sprites.template.handlebars',
+        padding: 2,
+        algorithm: 'binary-tree',
+        retinaSrcFilter: ['public/assets/images/sprites/**/*@2x.png'],
+        retinaDest: 'public/assets/images/sprite@2x.png'
+      }
+    },
+
     // Copy vendor files
     copy: {
       fonts: {
@@ -218,10 +245,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass-globbing');
   grunt.loadNpmTasks('grunt-cache-bust-alt');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-csssplit');
   grunt.loadNpmTasks('grunt-hub');
 
   // Task definition
-  grunt.registerTask('dist', ['sprite', 'sass_globbing', 'sass:dist', 'uglify:vendor', 'uglify:core', 'cssmin:vendor', 'copy:fonts', 'cacheBust']);
+  grunt.registerTask('dist', ['sprite', 'sass_globbing', 'sass:dist', 'csssplit:dev', 'uglify:vendor', 'uglify:core', 'cssmin:vendor', 'copy:fonts', 'cacheBust']);
   grunt.registerTask('dev', ['dist', 'watch']);
   grunt.registerTask('default', ['dev']);
 
