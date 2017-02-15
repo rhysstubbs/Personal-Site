@@ -271,7 +271,7 @@ return array(
 		 * );
 		 */
 		'packages'  => array(
-			//'cmf',
+			'cmf',
 		),
 
 		/**
