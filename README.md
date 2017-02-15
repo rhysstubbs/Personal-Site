@@ -12,7 +12,7 @@ Built by Sound in Theory
     sudo npm install -g bower
     npm install
     bower install
-    composer update
+    composer install
     ```
 3. To start front end dev work, run ```grunt```
 4. Before deploying to production, run ```grunt dist```
