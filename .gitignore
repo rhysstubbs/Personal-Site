@@ -9,6 +9,7 @@ desktop.ini
 *.tmproj
 build
 .idea
+.phpintel
 fuel/vendor
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
