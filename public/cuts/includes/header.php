@@ -8,11 +8,16 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="">
     
-    <link href="/assets/css/vendor.min.css?1a2ad8f515d2a0ed" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/screen.min.css?f6999be07513a13b" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/vendor.min.css?d055fbea78ee85c9" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 9 ]>
+        <link href="/assets/css/screen_page1.css?ddd5397baeb75e38" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    	<link href="/assets/css/screen.min.css?0ef94bcce5a0b551" rel="stylesheet" type="text/css" />
+    <!--<![endif]-->
     
-    <script type="text/javascript" src="/assets/js/dist/vendor.min.js?c3b684c5e761e820"></script>
-    <script type="text/javascript" src="/assets/js/dist/core.min.js?ee61732e79c1e810"></script>
+    <script type="text/javascript" src="/assets/js/dist/vendor.min.js?1ca730670e7cfa13"></script>
+    <script type="text/javascript" src="/assets/js/dist/core.min.js?7d6ca95e8800fdcc"></script>
     
 </head>
 <body>

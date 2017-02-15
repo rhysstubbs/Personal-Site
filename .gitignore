@@ -9,6 +9,7 @@ desktop.ini
 *.tmproj
 build
 .idea
+.phpintel
 fuel/vendor
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
@@ -29,5 +30,4 @@ fuel/packages/cmf
 db/backups
 node_modules
 bower_components
-public/templates
 .vagrant

@@ -71,14 +71,20 @@ class Image_Gd extends \Image_Driver
 	protected function _crop($x1, $y1, $x2, $y2)
 	{
 		extract(parent::_crop($x1, $y1, $x2, $y2));
+
+		$this->config['bgcolor'] = '#FFF';
 		$width = $x2 - $x1;
 		$height = $y2 - $y1;
 		$this->debug("Cropping image ".$width."x".$height."+$x1+$y1 based on coords ($x1, $y1), ($x2, $y2)");
 		$image = $this->create_transparent_image($width, $height);
 		
 		$sizes = $this->sizes();
+
+		$image = imagecreatetruecolor($width, $height);
+		$bg = imagecolorallocate($image, 255, 255, 255);
+		imagefill($image, 0, 0, $bg);
 		imagecopy($image, $this->image_data, -$x1, -$y1, 0, 0, $sizes->width, $sizes->height);
-		
+
 		$this->image_data = $image;
 	}
 	
