@@ -1370,12 +1370,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/soundintheory/fuel-cmf.git",
-                "reference": "e85a9263bcf87f03fb2108c791cb9c9855fe60d6"
+                "reference": "0457e46545d549db15d2054641fdefca1688feec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/soundintheory/fuel-cmf/zipball/e85a9263bcf87f03fb2108c791cb9c9855fe60d6",
-                "reference": "e85a9263bcf87f03fb2108c791cb9c9855fe60d6",
+                "url": "https://api.github.com/repos/soundintheory/fuel-cmf/zipball/0457e46545d549db15d2054641fdefca1688feec",
+                "reference": "0457e46545d549db15d2054641fdefca1688feec",
                 "shasum": ""
             },
             "require": {
@@ -1447,7 +1447,7 @@
                 "bootstrap",
                 "cmf"
             ],
-            "time": "2017-02-15 12:50:49"
+            "time": "2017-02-16 15:31:15"
         },
         {
             "name": "soundintheory/hooked-package-installer",
@@ -1545,12 +1545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6a05474dc5dc50c9fb579e117c879274b3f24b5c"
+                "reference": "0aa905f8e6841fcd160fe1d6d26fdd778778bd27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6a05474dc5dc50c9fb579e117c879274b3f24b5c",
-                "reference": "6a05474dc5dc50c9fb579e117c879274b3f24b5c",
+                "url": "https://api.github.com/repos/symfony/console/zipball/0aa905f8e6841fcd160fe1d6d26fdd778778bd27",
+                "reference": "0aa905f8e6841fcd160fe1d6d26fdd778778bd27",
                 "shasum": ""
             },
             "require": {
@@ -1598,7 +1598,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-14 16:24:56"
+            "time": "2017-02-16 14:06:24"
         },
         {
             "name": "symfony/debug",
