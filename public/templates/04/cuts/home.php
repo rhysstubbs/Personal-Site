@@ -3,15 +3,15 @@
 	<section id="top-banner">
 		<div class="container">
 			<div class="row no-pad">
-				<div class="homepage-slider flexslider">	
+				<div class="homepage-slider flexslider hidden-xs hidden-hs">
 				  <ul class="slides">
-				    <li>
+				    <li class="clearfix">
 				      <img src="http://placehold.it/1225x400&text=Slide+1" />
 				    </li>
-				    <li>
+				    <li class="clearfix">
 				      <img src="http://placehold.it/1225x400&text=Slide+2" />
 				    </li>
-				    <li>
+				    <li class="clearfix">
 				      <img src="http://placehold.it/1225x400&text=1225x400" />
 				    </li>
 				  </ul>
@@ -39,8 +39,8 @@
 
 	<section id="homepage">
 		<div class="container">
-			<div class="body-list overlay top row">
-				<a class="item" href="#">
+			<div class="body-list overlay top row clearfix">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -48,7 +48,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -56,7 +56,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -66,11 +66,11 @@
 				</a>
 			</div>
 
-			<div class="body-list middle row">
-				<div class="block-heading">
+			<div class="body-list middle row clearfix">
+				<div class="block-heading col-xs-24">
 					<h3 class="heading">This is the heading of the next section</h3>
 				</div>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -78,7 +78,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -86,7 +86,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -94,7 +94,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -102,7 +102,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -110,7 +110,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-8 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -120,30 +120,30 @@
 				</a>
 			</div>
 
-			<div class="body-list bottom row">
-				<div class="block-heading">
+			<div class="body-list bottom row clearfix">
+				<div class="block-heading col-xs-24">
 					<h3 class="heading">Additional Things</h3>
 				</div>
-				<a class="item" href="#">
+				<a class="item col-sm-6 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<!-- figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption -->
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-6 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<!-- figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption -->
 					</figure>
 				</a>
 				<!-- For 2-up lists (loop.index0 % 2 == 0) --><div class="clear hl-show h-show"></div>
-				<a class="item" href="#">
+				<a class="item col-sm-6 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<!-- figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption -->
 					</figure>
 				</a>
-				<a class="item" href="#">
+				<a class="item col-sm-6 col-xs-12" href="#">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<!-- figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption -->
@@ -152,17 +152,17 @@
 				<!-- For 2-up lists (loop.index0 % 2 == 0) --><div class="clear hl-show h-show"></div>
 			</div>
 
-			<div class="body-list other row">
-				<div class="item" data-height-group="usp2">
+			<div class="body-list other row clearfix">
+				<div class="item col-sm-8 col-xs-12" data-height-group="usp2">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean</p>
 				</div>
-				<div class="item" data-height-group="usp2">
+				<div class="item col-sm-8 col-xs-12" data-height-group="usp2">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean
 					This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
 				</div>
-				<div class="item" data-height-group="usp2">
+				<div class="item col-sm-8 col-xs-12" data-height-group="usp2">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean</p>
 				</div>

@@ -8,7 +8,6 @@ body {
 }
 
 a{ 
-	color:#000;
 	text-decoration:none;
 	img{
 		border:none;
@@ -83,7 +82,6 @@ a{
 //Item list
 
 .block-heading {
-	@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
 	div{
 		position: relative;
 		background: #333;
@@ -92,7 +90,7 @@ a{
 		padding-bottom: 12px;
 		margin-bottom: 25px;
 		.heading {
-			@extend .heading-font-2; font-size: 20px; line-height: 24px;
+			font-size: 20px; line-height: 24px;
 			margin: 0;
 			padding: 0 80px;
 			text-align: center;
@@ -110,7 +108,6 @@ a{
 }
 
 .item-list{
-	@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
 	.item{
 		figure{
 			position:relative;
@@ -177,7 +174,6 @@ a{
 .breadcrumbs{
 	margin-bottom: 25px;
 	ul{
-		@extend .list-unstyled; @extend .list-inline;
 		li{
 			a{
 				font-size: 14px;
@@ -220,18 +216,13 @@ a{
 .nav-secondary {
   margin: 0 0 24px;
   ul{
-  	@extend .list-unstyled;
   	li{
   		font-size: 14px;
 	  line-height: 18px;
 	  border-bottom: 1px solid #eee;
-	  @extend .regular-font;
 	  a{
 	  		display: block;
   			padding: 10px 0;
-	  	}
-	  &.on{
-	  	@extend .bold-font;
 	  }
   	}
   }

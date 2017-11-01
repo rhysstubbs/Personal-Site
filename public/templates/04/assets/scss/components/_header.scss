@@ -4,11 +4,7 @@
 
 #header {
 	ul{
-		@extend .list-unstyled; @extend .list-inline;
 		margin: 0;
-		li{
-
-		}
 	}
 	.container{
 		background:#fff;
@@ -17,15 +13,10 @@
 	.top{
 		background: rgb(51, 51, 51);
 		.left{
-			@extend .col-lg-12;@extend .col-md-12;@extend .col-sm-12;@extend .col-xs-12;@extend .col-hs-12;
 			padding:0;
 		}
 		.right{
-			@extend .col-lg-12;@extend .col-md-12;@extend .col-sm-12;@extend .col-xs-12;@extend .col-hs-12;
 			padding:0;
-			ul{
-				@extend .pull-right;
-			}
 		}
 		a{
 			display:block;
@@ -45,7 +36,6 @@
 		.logo{
 			padding-top: 44px;
 			padding-bottom: 44px;
-			@extend .col-lg-6;@extend .col-md-8;@extend .col-sm-10;@extend .col-xs-16;@extend .col-hs-16;
 			img{
 				display: block;
   				margin: 0 20px;
@@ -56,8 +46,6 @@
 			}
 		}
 		.expand-menu{
-			@extend .col-xs-8;@extend .col-hs-5;
-			@extend .pull-right;
 			padding-top: 44px;
 			padding-bottom: 44px;
 			margin: 0;
@@ -70,14 +58,11 @@
 			}
 		}
 		.right{
-			@extend .col-lg-18;@extend .col-md-16;@extend .col-sm-14;@extend .col-xs-24;@extend .col-hs-24;
 			form{
 				display: block;
 				padding-top: 44px;
 				padding-bottom: 44px;
-				@extend .clearfix;
 				input{
-					@extend .pull-right;
 					font-size: 14px;
 					line-height: 18px;
 					padding: 6px 10px;

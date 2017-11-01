@@ -2,9 +2,9 @@
 
 	<section id="contact">
 		<div class="container pad-bot">
+            <h1 class="page-title">Contact Form</h1>
 			<div class="row">
-				<h1 class="page-title">Contact Form</h1>
-				<div class="form">
+				<div class="form col-md-18 col-sm-16 col-xs-24">
 					<form method="post" class="form validate">
 						<div class="form-group form-group-lg">
 							<input type="text" class="form-control" id="form-name" name="name" placeholder="Name" tabindex="1" required>
@@ -31,7 +31,7 @@
 						<button type="submit" class="btn btn-lg btn-block btn-submit">Send</button>
 					</form>
 				</div>
-				<div class="right">
+				<div class="right col-md-6 col-sm-8 col-xs-24">
 					<i class="fa fa-phone"></i> 01234567899<br>
 					<i class="fa fa-mobile"></i> 01234567899<br>
 					<i class="fa fa-building"></i> 9 station road<br>

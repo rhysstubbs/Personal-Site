@@ -4,7 +4,7 @@
 		<div class="container">
 			<h1 class="page-title">Page Title</h1>
 			<div class="row generic">
-				<div class="right">
+				<div class="right col-sm-6 col-xs-24 pull-right">
 					<nav class="nav-secondary" role="navigation">
 						<ul>
 							<li class="on"><a href="#">Nav Item #1</a></li>
@@ -16,7 +16,7 @@
 					</nav>
 				</div> <!-- right -->
 
-				<div class="left">
+				<div class="left col-sm-18 col-xs-24">
 					<div class="editor pad-bot">
 						<p class="large">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 						<p>If we do not already have the property to suit you in our extensive range of properties to buy, we will keep you updated on any new properties that enter the sales market. Alternatively, sign up for our newsletter or check Currell.com which is updated throughout the day with our most recent properties to buy in London.</p>

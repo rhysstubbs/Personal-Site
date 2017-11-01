@@ -7,17 +7,15 @@
 		background: #F0F0F0;	
 		.item-list{
 			.item{
-				@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-12;@extend .col-xs-12;@extend .col-hs-24;
 				margin: 20px 0;
 				padding: 0 20px;
-				border-left: 1px solid #aaa;
-				text-align:center;
-				@media #{$sm-down} {
-					border-left: none;
+				@media #{$sm-up} {
+					text-align:center;
 				}
-				@media #{$xs-down} {
-					text-align:left;
+				@media #{$md-up} {
+					border-left: 1px solid #aaa;
 				}
+
 				.heading{
 					font-size: 18px;
 						margin: 0 0 10px;
@@ -72,9 +70,6 @@
 					}
 				}
 			}
-			ul{
-				@extend .list-unstyled; @extend .list-inline;
-			}
 		}
 	}
 
@@ -83,20 +78,16 @@
 		color: #fff;
 		.copy{
 			margin:0;
-			@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-24;@extend .col-hs-24;
-			text-align:right;
 			padding-top:10px;
 			padding-bottom:10px;
-			@media #{$xs-down} {
-				text-align:left;
+			@media #{$sm-up} {
+				text-align:right;
 			}
 		}
 		.nav{
-			@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-16;@extend .col-xs-24;@extend .col-hs-24;
-			overflow: hidden;	
+			overflow: hidden;
 			ul{
 				margin:0;
-				@extend .list-unstyled; @extend .list-inline;
 				li {
 					margin: 0 0 0 20px;
 					@media #{$xs-down} {
@@ -109,9 +100,9 @@
 					a {
 						display: block;
 						color: #fff;
-						padding: 10px 0;
-						@media #{$xs-down} {
-							padding: 5px 0;
+						padding: 5px 0;
+						@media #{$sm-up} {
+							padding: 10px 0;
 						}
 					}
 
