@@ -57,16 +57,14 @@
 	</section> <!-- top-banner -->
 
 	<section class="body container pad-top pad-bot">
-		<div class="row">
-			<div class="block-heading">
-				<div>
-					<h3 class="heading">Three column layout</h3>
-				</div>
-			</div>
-		</div>
+        <div class="block-heading">
+            <div>
+                <h3 class="heading">Three column layout</h3>
+            </div>
+        </div>
 		<div class="body-top row no-pad">
 			<div class="item-list">
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -75,7 +73,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -84,7 +82,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -93,7 +91,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -102,7 +100,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -111,7 +109,7 @@
 						</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>
@@ -122,34 +120,32 @@
 				</a>
 			</div>
 		</div>
-		<div class="row">
-			<div class="block-heading">
-				<div>
-					<h3 class="heading">Four column layout</h3>
-				</div>
-			</div>
-		</div>
+        <div class="block-heading">
+            <div>
+                <h3 class="heading">Four column layout</h3>
+            </div>
+        </div>
 		<div class="body-middle row no-pad">
 			<div class="item-list">
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>

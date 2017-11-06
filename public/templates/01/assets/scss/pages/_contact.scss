@@ -1,17 +1,11 @@
 #contact{
-	.page-title{
-		@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
-	}
 	.form{
-		@extend .col-lg-18;@extend .col-md-18;@extend .col-sm-16;@extend .col-xs-24;@extend .col-hs-24;
 		form{
 			padding: 0;
 			width:95%;
 		}
 	}
 	.right{
-		@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-8;@extend .col-xs-24;@extend .col-hs-24;
-		@extend .pull-right;
 		i{
 			font-size: 20px;
 			width:40px;

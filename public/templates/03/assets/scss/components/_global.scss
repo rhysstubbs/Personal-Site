@@ -81,7 +81,6 @@ a{
 //Item list
 
 .block-heading {
-	@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
 	div{
 		position: relative;
 		background: #999999;
@@ -107,7 +106,6 @@ a{
 }
 
 .item-list{
-	@extend .col-lg-24;@extend .col-md-24;@extend .col-sm-24;@extend .col-xs-24;@extend .col-hs-24;
 	.item{
 		figure{
 			position:relative;
@@ -204,6 +202,11 @@ a{
 	  }
   	}
   }
+}
+
+.large{
+	font-size: 26px; line-height: 30px;
+	margin: 20px 0 40px 0;
 }
 
 .responsive-table{

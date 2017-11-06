@@ -2,21 +2,21 @@
 
 	<section id="generic">
 		<div class="container pad-bot">
+            <h1 class="page-title">Page Title</h1>
 			<div class="row">
-				<h1 class="page-title">Page Title</h1>
-				<div class="right">
-					<nav class="nav-secondary" role="navigation">
+				<div class="right col-md-6 col-sm-8 col-xs-24">
+					<nav class="nav-secondary list-unstyled" role="navigation">
 						<ul>
-							<li class="on"><a href="#">Nav Item #1</a></li>
-							<li><a href="#">Nav Item #2</a></li>
-							<li><a href="#">Nav Item #3</a></li>
-							<li><a href="#">Nav Item #4</a></li>
-							<li><a href="#">Nav Item #5</a></li>
+							<li class="bold-font"><a href="#">Nav Item #1</a></li>
+							<li class="regular-font"><a href="#">Nav Item #2</a></li>
+							<li class="regular-font"><a href="#">Nav Item #3</a></li>
+							<li class="regular-font"><a href="#">Nav Item #4</a></li>
+							<li class="regular-font"><a href="#">Nav Item #5</a></li>
 						</ul>
 					</nav>
 				</div> <!-- right -->
 
-				<div class="editor">
+				<div class="editor col-md-18 col-sm-16 col-xs-24">
 					<p class="large">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 					<p>If we do not already have the property to suit you in our extensive range of properties to buy, we will keep you updated on any new properties that enter the sales market. Alternatively, sign up for our newsletter or check Currell.com which is updated throughout the day with our most recent properties to buy in London.</p>
 					<h2>Heading #2</h2>

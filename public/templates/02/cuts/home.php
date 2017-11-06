@@ -55,37 +55,37 @@
 	<section class="body container pad-top pad-bot">
 		<div class="body-top row no-pad">
 			<div class="item-list overlay">
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-8 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x300&text=400x300" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
@@ -93,47 +93,43 @@
 				</a>
 			</div>
 		</div>
-		<div class="row">
-			<nav class="breadcrumbs">
-				<ul>
-					<li class="on"><a href="#">Alternative navigation</a></li>
-					<li><a href="#">Another link</a></li>
-					<li><a href="#">Another link</a></li>
-					<li><a href="#">Another link</a></li>
-					<li><a href="#">Another link</a></li>
-					<li><a href="#">Another link</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="row">
-			<div class="block-heading">
-				<div>
-					<h3 class="heading">This is the heading of the next section</h3>
-					<a href="#">All items</a>
-				</div>
-			</div>
-		</div>
-		<div class="row body-middle no-pad">
+        <nav class="breadcrumbs">
+            <ul class="list-unstyled list-inline">
+                <li class="on"><a href="#">Alternative navigation</a></li>
+                <li><a href="#">Another link</a></li>
+                <li><a href="#">Another link</a></li>
+                <li><a href="#">Another link</a></li>
+                <li><a href="#">Another link</a></li>
+                <li><a href="#">Another link</a></li>
+            </ul>
+        </nav>
+        <div class="block-heading">
+            <div>
+                <h3 class="heading">This is the heading of the next section</h3>
+                <a href="#">All items</a>
+            </div>
+        </div>
+		<div class="body-middle no-pad">
 			<div class="item-list">
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
 					</figure>
 				</a>
-				<a href="#" class="item">
+				<a href="#" class="item col-sm-6 col-xs-12">
 					<figure>
 						<img src="http://placehold.it/400x250&text=400x250" />
 						<figcaption>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet aenean sollicitudin</figcaption>
@@ -143,20 +139,20 @@
 		</div>
 		<div class="body-bottom row">
 			<div class="item-list">
-				<hr>
-				<div class="item" data-height-group="1">
+				<hr class="col-xs-24" />
+				<div class="item col-sm-8 col-xs-12" data-height-group="1">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean</p>
 				</div>
-				<div class="item" data-height-group="1">
+				<div class="item col-sm-8 col-xs-12" data-height-group="1">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean</p>
 				</div>
-				<div class="item" data-height-group="1">
+				<div class="item col-sm-8 col-xs-12" data-height-group="1">
 					<h3 class="heading">Another Section</h3>
 					<p class="text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean</p>
 				</div>
-				<hr>
+                <hr class="col-xs-24" />
 			</div>
 		</div> <!-- body-bottom -->
 	</section> <!-- body -->

@@ -14,7 +14,6 @@
   		width:auto;
   		max-width:none;
 		.item{
-			@extend .col-lg-6;@extend .col-md-6;@extend .col-sm-12;@extend .col-xs-12;@extend .col-hs-24;
 			margin-bottom: 20px;
 			@media #{$hs} {
 				margin-bottom: 5px;
@@ -25,9 +24,9 @@
 				letter-spacing: 0.04em;
 				text-transform: uppercase;
 				color: rgb(102, 102, 102);
-				margin: 0px 0px 20px;
-				@media #{$xs-down} {
-					margin-bottom: 5px;
+				margin-bottom: 5px;
+				@media #{$sm-up} {
+					margin: 0px 0px 20px;
 				}
 			}
 			.inner{
@@ -36,7 +35,6 @@
 				height: 100%;
 				padding:20px;
 				ul{
-					@extend .list-unstyled; @extend .list-inline;
 					img{
 						margin-bottom: 10px;
 					}
@@ -106,25 +104,22 @@
 	.bottom-footer{
 		background: rgb(51, 51, 51);
 		.left{
-			@extend .col-lg-12;@extend .col-md-12;@extend .col-sm-16;@extend .col-xs-24;@extend .col-hs-24;
 			padding:0;
 		}
 		.right{
-			@extend .col-lg-12;@extend .col-md-12;@extend .col-sm-8;@extend .col-xs-24;@extend .col-hs-24;
 			padding:0;
 			.copy{
-				text-align:right;
+
 				color:#fff;
 				padding:10px 20px;
 				margin:0;
-				@media #{$xs-down} {
-					text-align:left;
+				@media #{$sm-up} {
+					text-align:right;
 				}
 			}
 
 		}
 		ul{
-			@extend .list-unstyled; @extend .list-inline;
 			margin:0;
 			@media #{$xs-down} {
 				li{
