@@ -70,7 +70,7 @@ module.exports = function(grunt) {
         files: {
           'public/assets/js/dist/vendor.min.js': [
 
-            // Core libs
+            // Core lib
             'bower_components/html5shiv/dist/html5shiv.js',
             'bower_components/respond/dest/respond.src.js',
             'bower_components/eventEmitter/EventEmitter.js',
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
             //'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
             'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
 
-            // Other JS libs
+            // Other JS lib
             'bower_components/parsleyjs/dist/parsley.js',
             'bower_components/jquery.easing/js/jquery.easing.js',
             'bower_components/jquery-placeholder/jquery.placeholder.js',

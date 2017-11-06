@@ -1,9 +1,9 @@
 <?php include 'includes/header.php' ?>
 
 	<section id="top-banner">
-		<div class="homepage-slider flexslider">
+		<div class="">
 		  <ul class="slides">
-		    <li>
+		    <li class="slick-slider">
 		      <img src="http://placehold.it/2400x400&text=Slide+1" />
 		      <div class="container">
 		      	<div class="row">
@@ -21,7 +21,7 @@
 				</div>
 		      </div>
 		    </li>
-		    <li>
+		    <li class="slick-slider">
 		      <img src="http://placehold.it/2400x400&text=Slide+2" />
 		      <div class="container">
 		      	<div class="row">
@@ -39,7 +39,7 @@
 				</div>
 		      </div>
 		    </li>
-		    <li>
+		    <li class="slick-slider">
 		      <img src="http://placehold.it/2400x400&text=Slide+3" />
 		      <div class="container">
 		      	<div class="row">
@@ -59,25 +59,6 @@
 		    </li>
 		  </ul>
 		</div>
-		<script type="text/javascript">
-			$(document).ready(function() {
-
-				// Reference: http://www.woothemes.com/flexslider/
-				$('.homepage-slider').flexslider({
-					animation: "slide",
-					selector: ".slides > li",
-					slideshow: true,
-					slideshowSpeed: 7000,
-					animationSpeed: 800,
-					smoothHeight: false,
-					controlNav: true, // Generates pagination
-					directionNav: true, // Generates next / prev arrows
-					animationLoop: false,
-					useCSS: false
-				});
-
-			});
-		</script>
 	</section> <!-- outer -->
 
 	<section class="body">

@@ -1,5 +1,15 @@
-//= require jquery-1.10.2.min.js
+/**
+ * Imports for Sass styling.
+ * Minified version -> public/assets/_dist/app.min.css
+ */
+require('../scss/screen.scss');
+require('../scss/print.scss');
 
+
+/**
+ * Core Javascript/Jquery functionality
+ * Minified version -> public/assets/dist/app.bundle.min.js
+ */
 (function($) {
 
 	$(document).on('ready', function() {
@@ -21,7 +31,7 @@
 
 		// Form validation
 		this.initValidation();
-	}
+	};
 
 	/**
 	 * Form Validation using Parsley JS: http://parsleyjs.org/doc/index.html
@@ -60,7 +70,7 @@
 			}
 
 		});
-	}
+	};
 
 	// ------------------------------------------------------------------------------------------------------
 	// EQUAL HEIGHT GROUPS
@@ -88,7 +98,7 @@
 		$(window).on('load resize', $.proxy(this.onResize, this));
 		this.onResize();
 
-	}
+	};
 
 	EqualHeightGroups.defaults = {};
 
@@ -110,7 +120,7 @@
 			}).get());
 			line.height(maxHeight);
 		}
-	}
+	};
 
 	EqualHeightGroups.prototype.onResize = function()
 	{
