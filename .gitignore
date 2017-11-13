@@ -31,3 +31,4 @@ db/backups
 node_modules
 bower_components
 .vagrant
+dist/
