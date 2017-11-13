@@ -23,7 +23,7 @@
 
 // Hide "xs" at the handheld size
 @media (max-width: $screen-hs) {
-	.visible-xs
+	.visible-xs,
 	.visible-xs-block,
 	.visible-xs-inline,
 	.visible-xs-inline-block {

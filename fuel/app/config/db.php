@@ -6,5 +6,9 @@
  */
 
 return array(
-
+	
+	'doctrine2' => array(
+		'cache_namespace' => 'changeme'
+	),
+	
 );

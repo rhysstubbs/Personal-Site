@@ -5,7 +5,7 @@
 			<div class="homepage-slider">
 				<div class="flexslider">
 				  <ul class="slides">
-				    <li>
+				    <li class="slick-slider-homepage">
 				      <img src="http://placehold.it/1175x500&text=Slide+1" class="slide-img"/>
 				      	<div class="slide-content">
 							<h1 class="title">I'm a title or a message in a striking font</h1>
