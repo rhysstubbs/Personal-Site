@@ -5,18 +5,18 @@ const OptimiseCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
 const configuration = {
-
+    devtool: 'eval',
+    node: {
+        fs: 'empty'
+    },
     entry: {
         app: './public/assets/js/core.js'
     },
     output: {
         path: path.resolve(__dirname, 'public/assets/dist'),
         filename: '[name].bundle.min.js',
-        publicPath: '/'
-    },
-    devtool: 'inline-source-map',
-    node: {
-        fs: 'empty'
+        publicPath: '/',
+        pathinfo: true
     },
     module: {
         rules: [
@@ -87,7 +87,7 @@ const configuration = {
             },
             target: {
                 image: path.resolve(__dirname, 'public/assets/images/sprite.png'),
-                css: path.resolve(__dirname, 'public/assets/images/sprite.styl')
+                css: path.resolve(__dirname, 'public/assets/scss/utilities/_sprites.scss')
             },
             retina: '@2x',
             padding: 2
