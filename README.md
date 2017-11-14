@@ -26,13 +26,20 @@ Built by Sound in Theory
 2. Change to project root and run these commands:
     
     ```
-    sudo npm install -g grunt-cli
-    sudo npm install -g bower
     npm install
-    bower install
     ```
-3. To start front end dev work, run ```grunt dev```
-4. Before deploying to production, run ```grunt dist```
+3. To build project for development run 
+    ```
+    npm run dev
+    ```
+4. To start front-end development run git add 
+    ```
+    npm run watch
+    ```
+4. Before deploying to production, run 
+    ```
+    npm run build
+    ```
 
 ## SASS Mixins
 
