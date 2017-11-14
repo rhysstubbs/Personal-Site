@@ -4,7 +4,8 @@
   "description": "",
   "main": "public/index.php",
   "scripts": {
-    "build": "webpack",
+    "dev": "webpack --config dev.config.js",
+    "build": "webpack --progress --config prod.config.js",
     "watch": "webpack --watch"
   },
   "repository": {
@@ -23,21 +24,18 @@
     "jquery": "~2.2.4",
     "jquery-placeholder": "~2.1.0",
     "magnific-popup": "^1.1.0",
-    "parsleyjs": "~2.8.0",
+    "parsleyjs": "^2.8.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "css-loader": "^0.28.7",
-    "file-loader": "~1.1.5",
-    "glob": "^7.1.2",
+    "file-loader": "^1.1.5",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
-    "webpack-concat-plugin": "^1.4.2",
-    "webpack-livereload-plugin": "^1.0.0",
     "webpack-spritesmith": "^0.3.3"
   }
 }

@@ -2,19 +2,10 @@ const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const OptimiseCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
-const ConcatPlugin = require('webpack-concat-plugin');
-
-
-var glob = require("glob")
-
 
 const configuration = {
-    devtool: 'source-map',
-    node: {
-        fs: 'empty'
-    },
+
     entry: {
         app: './public/assets/js/core.js'
     },
@@ -22,6 +13,10 @@ const configuration = {
         path: path.resolve(__dirname, 'public/assets/dist'),
         filename: '[name].bundle.min.js',
         publicPath: '/'
+    },
+    devtool: 'inline-source-map',
+    node: {
+        fs: 'empty'
     },
     module: {
         rules: [
@@ -45,22 +40,32 @@ const configuration = {
     resolve: {
         modules: [
             "node_modules",
-            "spritesmith-generated"]
+            "spritesmith-generated"
+        ]
     },
     plugins: [
-        // MINIFY ALL JAVASCRIPT IN BUNDLE
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: '[name].min.js',
+            minChunks: function (module) {
+                return module.context && (module.context.indexOf('node_modules') !== -1);
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             parallel: true,
             sourceMap: true,
             minimize: true,
             comments: false
         }),
-        // EXTRACT ALL SCSS TO CSS
         new ExtractTextPlugin({
             filename: "[name].min.css",
             allChunks: true
         }),
-        // MINIFY ALL CSS
         new OptimiseCssAssetsPlugin({
             assetNameRegExp: /\.min\.css$/,
             cssProcessor: require('cssnano'),
@@ -75,7 +80,6 @@ const configuration = {
             },
             canPrint: true
         }),
-        //BUILD SPRITE FILE FROM PNGs
         new SpritesmithPlugin({
             src: {
                 cwd: path.resolve(__dirname, 'public/assets/images/sprites'),
@@ -87,22 +91,7 @@ const configuration = {
             },
             retina: '@2x',
             padding: 2
-        }),
-        new ConcatPlugin({
-            uglify: true,
-            sourceMap: true,
-            name: 'lib',
-            fileName: '[name].min.js',
-            filesToConcat: glob.sync('public/assets/js/lib/**/*.js')
-        }),
-        // CONFIGURE LIVE RELOAD FOR DEV WORK
-        new LiveReloadPlugin({
-            appendScriptTag: true,
-            port: 35729,
-            hostname: 'localhost'
         })
     ]
 };
-
-
 module.exports = configuration;
