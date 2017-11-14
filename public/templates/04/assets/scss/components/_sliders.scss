@@ -1,0 +1,12 @@
+.homepage-slider {
+  max-width: 100%;
+  .slides {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

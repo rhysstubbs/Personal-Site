@@ -3,8 +3,8 @@
 // MAIN IMPORTS
 
 @import "utilities/bootstrap";
-@import "bower_components/fontawesome/scss/font-awesome";
-@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "../../../../../node_modules/font-awesome/scss/font-awesome";
 @import "utilities/mixins";
 @import "utilities/grid";
 @import "utilities/sprites";
@@ -17,6 +17,7 @@
 @import "components/footer";
 @import "utilities/pages";
 @import "components/editor";
+@import "components/sliders";
 
 // ------------------------------------------------------------------------------------------------------
 // TEST COLUMN LAYOUT

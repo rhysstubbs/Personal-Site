@@ -9,7 +9,7 @@
 			li{
 				font-size: 15px;
   				line-height: 20px;
-  				margin: 0px 0px 0px 20px;
+  				margin: 0 0 0 20px;
   				padding:0;
   				&:first-child{
   					margin:0;
@@ -47,7 +47,8 @@
 		}
 	}
 	.nav{
-		margin:0;
+		margin:0 auto;
+		float: none;
 		padding-top:0;
 		ul{
 			margin:0;
@@ -82,5 +83,14 @@
 			margin:0;
 			padding:0;
 		}
+	}
+}
+
+.form-search {
+	padding: 0;
+	input {
+		padding: 2px;
+		border: 3px #eee solid;
+		width: 100%;
 	}
 }

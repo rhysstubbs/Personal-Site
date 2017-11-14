@@ -1,183 +1,175 @@
-
 // ------------------------------------------------------------------------------------------------------
 // GLOBAL STYLES
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-a{ 
-	color:#000;
-	text-decoration:none;
-	img{
-		border:none;
-	}
-	&:hover{
-		text-decoration: none;
-	}
+a {
+  color: #000;
+  text-decoration: none;
+  img {
+    border: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.no-pad{
-	margin-left: -$grid-gutter-width !important;
-    margin-right: -$grid-gutter-width !important;
+* {
+  line-height: 24px;
 }
 
-.pad-top{
-	padding-top:$grid-gutter-width;
-}
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #999;
+  border: none;
+  border-radius: 6px;
 
-.pad-bot{
-	padding-bottom:$grid-gutter-width;
-}
+  &:hover {
+    background: #ddd;
+  }
 
-*{
-	line-height:24px;
-}
+  // Small caps
 
-.btn{
-	display: inline-block;
-	padding: 12px 20px;
-	background: #eee;
-	border: none;
-	border-radius: 6px;
+  &.sc {
+    text-transform: uppercase;
+    font-size: 85%;
+    letter-spacing: 0.1em;
+    @extend .bold-font;
+  }
 
-	&:hover {
-		background: #ddd;
-	}
+  // Button colour combinations
 
-	// Small caps
+  &.inverse {
+    background: #222;
+    color: #fff;
 
-	&.sc {
-		text-transform: uppercase;
-		font-size: 85%; letter-spacing: 0.1em;
-		@extend .bold-font;
-	}
-
-	// Button colour combinations
-	
-	&.inverse {
-		background: #222;
-		color: #fff;
-
-		&:hover {
-			background: #111;
-		}
-	}
+    &:hover {
+      background: #111;
+    }
+  }
 }
 
 // ------------------------------------------------------------------------------------------------------
-// FLEXSLIDER DEFAULTS
-
-.flexslider {
-	border: none;
-	margin:0;
-	.flex-direction-nav {
-		line-height: normal;
-	}
-}
+// SLICKSLIDER DEFAULTS
 
 //--------------
 //Item list
 
 .block-heading {
-	div{
-		position: relative;
-		background: #999999;
-		color: #fff;
-		padding: 10px 0 12px;
-		margin-bottom: 25px;
-		.heading {
-			@extend .heading-font-2; font-size: 20px; line-height: 24px;
-			margin: 0;
-			padding: 0 80px;
-			text-align: center;
-		}
+  div {
+    position: relative;
+    background: #999999;
+    color: #fff;
+    padding: 10px 0 12px;
+    margin-bottom: 25px;
+    .heading {
+      @extend .heading-font-2 !optional;
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0;
+      padding: 0 80px;
+      text-align: center;
+    }
 
-		a{
-			position: absolute; top: 12px; right: 14px;
-			font-size: 15px; line-height: 24px;
-			color: #fff;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
+    a {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 15px;
+      line-height: 24px;
+      color: #fff;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.item-list{
-	.item{
-		figure{
-			position:relative;
-			img {
-				margin: 0;
-				max-width: 100%;
-			}
+.item-list {
+  .item {
+    figure {
+      position: relative;
+      img {
+        margin: 0;
+        max-width: 100%;
+      }
 
-			figcaption {
-				font-size: 13px; line-height: 16px;
-				padding: 8px 0;
-				h3{
-					@extend .light-font;
-					font-size: 18px;
-					line-height: 16px;
-				}
-				p{
-					line-height: 16px;
-				}
-			}
-		}
-		&:hover {
-			img {
-				opacity: .8;
-			}
-		}
-	}
-	p{
-		margin-bottom: 30px;
-	}
-	/* Overlay the figcaptions onto the image */
-	&.overlay {
-		> .item {
-			margin-bottom: 24px;
-			figure{
-				position:relative;
-				img {
-					margin: 0;
-				}
+      figcaption {
+        font-size: 13px;
+        line-height: 16px;
+        padding: 8px 0;
+        h3 {
+          @extend .light-font;
+          font-size: 18px;
+          line-height: 16px;
+        }
+        p {
+          line-height: 16px;
+        }
+      }
+    }
+    &:hover {
+      img {
+        opacity: .8;
+      }
+    }
+  }
+  p {
+    margin-bottom: 30px;
+  }
+  /* Overlay the figcaptions onto the image */
+  &.overlay {
+    > .item {
+      margin-bottom: 24px;
+      figure {
+        position: relative;
+        img {
+          margin: 0;
+        }
 
-				figcaption {
+        figcaption {
 
-					@include transition(background-color .15s cubic-bezier(0.215, 0.610, 0.355, 1.000));
-					transition-property: background-color, padding;
+          @include transition(background-color .15s cubic-bezier(0.215, 0.610, 0.355, 1.000));
+          transition-property: background-color, padding;
 
-					position: absolute; bottom: -1px; left: 0px; right: 0px;
-					background: rgb(230,230,230); background: rgba(255,255,255, .7);
-					font-size: 13px; line-height: 16px;
-					padding: 8px 12px;
+          position: absolute;
+          bottom: -1px;
+          left: 0px;
+          right: 0px;
+          background: rgb(230, 230, 230);
+          background: rgba(255, 255, 255, .7);
+          font-size: 13px;
+          line-height: 16px;
+          padding: 8px 12px;
 
-					@media #{$xs-down} {
-						position: relative;
-						background: rgb(238, 238, 238);
-					}
-				}
-			}
+          @media #{$xs-down} {
+            position: relative;
+            background: rgb(238, 238, 238);
+          }
+        }
+      }
 
-			&:hover {
-				@media #{$md-up} {
-					figcaption {
-						background: rgb(245,245,245); background: rgba(255,255,255, .9);
-						padding-top: 14px; padding-bottom: 14px;
-						
-					}
-				}
-			}
+      &:hover {
+        @media #{$md-up} {
+          figcaption {
+            background: rgb(245, 245, 245);
+            background: rgba(255, 255, 255, .9);
+            padding-top: 14px;
+            padding-bottom: 14px;
 
-		}
-	}
+          }
+        }
+      }
+
+    }
+  }
 }
 
-.page-title{
+.page-title {
   font-size: 34px;
   line-height: 38px;
   margin: 0 0 20px;
@@ -186,65 +178,66 @@ a{
 
 .nav-secondary {
   margin: 0 0 24px;
-  ul{
-  	@extend .list-unstyled;
-  	li{
-  		font-size: 14px;
-	  line-height: 18px;
-	  border-bottom: 1px solid #eee;
-	  @extend .regular-font;
-	  a{
-	  		display: block;
-  			padding: 10px 0;
-	  	}
-	  &.on{
-	  	@extend .bold-font;
-	  }
-  	}
+  ul {
+    @extend .list-unstyled;
+    li {
+      font-size: 14px;
+      line-height: 18px;
+      border-bottom: 1px solid #eee;
+      @extend .regular-font;
+      a {
+        display: block;
+        padding: 10px 0;
+      }
+      &.on {
+        @extend .bold-font;
+      }
+    }
   }
 }
 
-.large{
-	font-size: 26px; line-height: 30px;
-	margin: 20px 0 40px 0;
+.large {
+  font-size: 26px;
+  line-height: 30px;
+  margin: 20px 0 40px 0;
 }
 
-.responsive-table{
-	@media #{$hs} {
-		  max-width: 100%; // adjust to your needs
-		  tr {
-		    border-top: 1px solid #ddd;
-		    border-bottom: 1px solid #ddd;
-		  }  
-		  th {
-		    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
-		  }
-		  
-		  td {
-		    display: block; 
-		    border:none !important;
-		    
-		    &:first-child {
-		      padding-top: .5em;
-		    }
-		    &:last-child {
-		      padding-bottom: .5em;
-		    }
+.responsive-table {
+  @media #{$hs} {
+    max-width: 100%; // adjust to your needs
+    tr {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!
+    }
 
-		    &:before {
-		      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
-		      font-weight: bold;
+    td {
+      display: block;
+      border: none !important;
 
-		      // optional stuff to make it look nicer
-		      width: 6.5em; // magic number :( adjust according to your own content
-		      display: inline-block;
-		    }
-		  }
-		  
-		  th, td {
-		    text-align: left;
+      &:first-child {
+        padding-top: .5em;
+      }
+      &:last-child {
+        padding-bottom: .5em;
+      }
 
-		  }	  	  
-	}
+      &:before {
+        content: attr(data-th) ": "; // who knew you could do this? The internet, that's who.
+        font-weight: bold;
+
+        // optional stuff to make it look nicer
+        width: 6.5em; // magic number :( adjust according to your own content
+        display: inline-block;
+      }
+    }
+
+    th, td {
+      text-align: left;
+
+    }
+  }
 }
 

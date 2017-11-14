@@ -1,42 +1,87 @@
-
 // ------------------------------------------------------------------------------------------------------
 // HOMEPAGE
 
+.body {
+  .body-middle {
+    .item-list {
+      .item {
+        margin-bottom: 25px;
+      }
+    }
+  }
 
-.body{
-	.body-middle{
-		.item-list{
-			.item{  margin-bottom: 25px;
-			}
-		}
-	}
+  .body-bottom {
+    .item-list {
+      .item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media #{$sm-up} {
+          border-left: 2px solid #aaa;
+        }
+        text-align: center;
+        .heading {
+          font-size: 18px;
+          margin: 0 0 10px;
+        }
+        .text {
+          font-size: 13px;
+          line-height: 20px;
+          margin-bottom: 0;
+        }
+        &:first-of-type {
+          border-left: none;
+        }
+      }
+      hr {
+        border-top: 2px solid #aaa;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
 
-	.body-bottom{
-		.item-list{
-			.item{
-				padding-top: 20px;
-				padding-bottom: 20px;
-				@media #{$sm-up} {
-					border-left: 2px solid #aaa;
-				}
-				text-align:center;
-				.heading{
-					font-size: 18px;
-					margin: 0 0 10px;
-				}
-				.text{
-					font-size: 13px;
-					line-height: 20px;
-					margin-bottom: 0;
-				}
-				&:first-of-type{
-					border-left: none;
-				}
-			}
-			hr{
-				border-top: 2px solid #aaa;
-				box-sizing: border-box;
-			}
-		}
-	}
+.slides {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slide-overlay {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .slide-overlay:before {
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .slide-content {
+    background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 80%;
+    padding: 25px 10px;
+    a {
+      padding: 10px 20px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      display: inline-block;
+      color: #fff;
+      background-color: #000;
+    }
+    a:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
 }

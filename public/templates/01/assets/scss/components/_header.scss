@@ -1,84 +1,77 @@
-
 // ------------------------------------------------------------------------------------------------------
 // HEADER
 
+.nav {
+  text-align: right;
+  ul {
+    display: inline-block;
+    li {
+      display: inline-block;
+      padding: 0 5px;
+      margin-left: 6px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.on {
+        text-decoration: underline;
+      }
+    }
+    a, span {
+      padding: 4px 10px;
+      display: block;
+    }
+  }
+}
+
+#main-nav {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+#mobile-nav {
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      a {
+        padding: 20px 0;
+        display: block;
+      }
+    }
+  }
+}
+
+.list {
+  border-top: 1px solid #eee;
+}
+
+#top-nav {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 #header {
-	background: #fff;
-	.logo {
-		padding-top: 50px;
-		padding-bottom: 10px;
-		@media #{$sm-up} {
-			padding-bottom: 50px;
-		}
-		img{
-			max-width: 100%;
-		}
-	}
+  background: #fff;
+  .logo {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    @media #{$sm-up} {
+      padding-bottom: 50px;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
 
-	.right {
-		padding-top: 24px;
-		padding-bottom: 24px;
-		ul{
-			margin:0;
-			padding:0;
-			li{
-				margin-left:6px;
-				padding:0;
-				&:first-child{
-					margin-left:0;	
-				}
-				&.on{
-					text-decoration: underline;
-				}
-			}
-			a,span{
-				padding:4px 10px;
-				display: block;
-			}
-		}
-		.top {
-			float: right;
-			padding: 2px 0;
-		}
-		.nav{
-			float:right;
-			padding: 2px 0;
-			clear: both;
-			border-top: 1px solid #eee;
-		}
-	}
-
-	.expand-menu{
-		padding-top: 50px;
-		padding-bottom: 10px;
-		@media #{$sm-up} {
-			padding-top: 50px;
-			padding-bottom: 50px;
-		}
-		margin:0;
-		button{
-			-webkit-appearance: none;
-			  background: transparent;
-			  border: none;
-		}
-	}
-	.nav-mobile{
-		ul{
-			width:70%;
-			margin:0 auto 0;
-
-			li{
-				width:100%;
-				padding:10px 0;
-				border-bottom:1px black solid;
-			}
-		}
-	}
-	.expand-menu {
-		button{
-			float:right;
-			margin:0;
-			padding:0;
-		}
-	}
+  .expand-menu {
+    button {
+      -webkit-appearance: none;
+      background: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
 }

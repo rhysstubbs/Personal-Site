@@ -52,24 +52,10 @@
           .inner {
             background: #fff;
             padding: 24px 24px 10px;
+            margin-right: 15px;
           }
 
         }
-      }
-    }
-  }
-  .flex-control-nav {
-    bottom: 0;
-    @extend .hidden-xs;
-    @extend .hidden-hs;
-  }
-
-  .flex-direction-nav {
-    @extend .hidden-xs;
-    @extend .hidden-hs;
-    li {
-      a {
-        line-height: initial;
       }
     }
   }

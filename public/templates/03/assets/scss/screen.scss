@@ -3,8 +3,8 @@
 // MAIN IMPORTS
 
 @import "utilities/bootstrap";
-@import "bower_components/fontawesome/scss/font-awesome";
-@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "../../../../../node_modules/font-awesome/scss/font-awesome";
 @import "utilities/mixins";
 @import "utilities/grid";
 @import "utilities/sprites";
@@ -13,10 +13,11 @@
 @import "components/global";
 @import "components/forms";
 @import "components/header";
-@import "components/banner";
 @import "components/footer";
 @import "utilities/pages";
 @import "components/editor";
+@import "utilities/pages";
+@import "components/sliders";
 
 // ------------------------------------------------------------------------------------------------------
 // TEST COLUMN LAYOUT
@@ -28,7 +29,7 @@
 .test-col > .inner {
 	background: #EEE;
 	min-height: 40px;
-	padding: 10px 0px;
+	padding: 10px 0;
 	text-align: center;
 	color: #999;
 }

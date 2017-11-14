@@ -1,0 +1,173 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$arrow_left_name = 'arrow-left';
+$arrow_left_x = 46px;
+$arrow_left_y = 22px;
+$arrow_left_offset_x = -46px;
+$arrow_left_offset_y = -22px;
+$arrow_left_width = 12px;
+$arrow_left_height = 19px;
+$arrow_left_total_width = 70px;
+$arrow_left_total_height = 42px;
+$arrow_left_image = '~sprite.png';
+$arrow_left = 46px 22px -46px -22px 12px 19px 70px 42px '~sprite.png' 'arrow-left';
+$arrow_right_name = 'arrow-right';
+$arrow_right_x = 58px;
+$arrow_right_y = 0px;
+$arrow_right_offset_x = -58px;
+$arrow_right_offset_y = 0px;
+$arrow_right_width = 12px;
+$arrow_right_height = 19px;
+$arrow_right_total_width = 70px;
+$arrow_right_total_height = 42px;
+$arrow_right_image = '~sprite.png';
+$arrow_right = 58px 0px -58px 0px 12px 19px 70px 42px '~sprite.png' 'arrow-right';
+$facebook_name = 'facebook';
+$facebook_x = 46px;
+$facebook_y = 0px;
+$facebook_offset_x = -46px;
+$facebook_offset_y = 0px;
+$facebook_width = 12px;
+$facebook_height = 22px;
+$facebook_total_width = 70px;
+$facebook_total_height = 42px;
+$facebook_image = '~sprite.png';
+$facebook = 46px 0px -46px 0px 12px 22px 70px 42px '~sprite.png' 'facebook';
+$google_plus_name = 'google-plus';
+$google_plus_x = 0px;
+$google_plus_y = 20px;
+$google_plus_offset_x = 0px;
+$google_plus_offset_y = -20px;
+$google_plus_width = 21px;
+$google_plus_height = 22px;
+$google_plus_total_width = 70px;
+$google_plus_total_height = 42px;
+$google_plus_image = '~sprite.png';
+$google_plus = 0px 20px 0px -20px 21px 22px 70px 42px '~sprite.png' 'google-plus';
+$menu_name = 'menu';
+$menu_x = 0px;
+$menu_y = 0px;
+$menu_offset_x = 0px;
+$menu_offset_y = 0px;
+$menu_width = 25px;
+$menu_height = 20px;
+$menu_total_width = 70px;
+$menu_total_height = 42px;
+$menu_image = '~sprite.png';
+$menu = 0px 0px 0px 0px 25px 20px 70px 42px '~sprite.png' 'menu';
+$pinterest_name = 'pinterest';
+$pinterest_x = 25px;
+$pinterest_y = 0px;
+$pinterest_offset_x = -25px;
+$pinterest_offset_y = 0px;
+$pinterest_width = 21px;
+$pinterest_height = 21px;
+$pinterest_total_width = 70px;
+$pinterest_total_height = 42px;
+$pinterest_image = '~sprite.png';
+$pinterest = 25px 0px -25px 0px 21px 21px 70px 42px '~sprite.png' 'pinterest';
+$play_name = 'play';
+$play_x = 58px;
+$play_y = 19px;
+$play_offset_x = -58px;
+$play_offset_y = -19px;
+$play_width = 9px;
+$play_height = 11px;
+$play_total_width = 70px;
+$play_total_height = 42px;
+$play_image = '~sprite.png';
+$play = 58px 19px -58px -19px 9px 11px 70px 42px '~sprite.png' 'play';
+$twitter_name = 'twitter';
+$twitter_x = 25px;
+$twitter_y = 21px;
+$twitter_offset_x = -25px;
+$twitter_offset_y = -21px;
+$twitter_width = 21px;
+$twitter_height = 17px;
+$twitter_total_width = 70px;
+$twitter_total_height = 42px;
+$twitter_image = '~sprite.png';
+$twitter = 25px 21px -25px -21px 21px 17px 70px 42px '~sprite.png' 'twitter';
+$spritesheet_width = 70px;
+$spritesheet_height = 42px;
+$spritesheet_image = '~sprite.png';
+$spritesheet_sprites = $arrow_left $arrow_right $facebook $google_plus $menu $pinterest $play $twitter;
+$spritesheet = 70px 42px '~sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}

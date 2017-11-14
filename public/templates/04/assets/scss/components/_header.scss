@@ -3,11 +3,9 @@
 // HEADER
 
 #header {
+	background-color: #fff;
 	ul{
 		margin: 0;
-	}
-	.container{
-		background:#fff;
 	}
 
 	.top{
@@ -23,6 +21,7 @@
 			padding:10px 20px;
 			color:#fff;
 		}
+
 		li{
 			&:hover{
 				a{
