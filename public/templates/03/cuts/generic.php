@@ -1,7 +1,6 @@
 <?php include 'includes/header.php' ?>
 
-	<section id="generic">
-		<div class="container pad-bot">
+	<section class="container">
             <h1 class="page-title">Page Title</h1>
 			<div class="row">
 				<div class="right col-md-6 col-sm-8 col-xs-24">
@@ -14,7 +13,7 @@
 							<li><a href="#">Nav Item #5</a></li>
 						</ul>
 					</nav>
-				</div> <!-- right -->
+				</div>
 
 				<div class="editor col-md-18 col-sm-16 col-xs-24">
 					<p class="large">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
@@ -57,9 +56,8 @@
 						<li>that you need to show</li>
 						<li>in the content</li>
 					</ol>
-				</div> <!-- editor -->
+				</div>
 			</div>
-		</div> <!-- wrap -->
-	</section> <!-- outer -->
+	</section>
 
 <?php include 'includes/footer.php' ?>

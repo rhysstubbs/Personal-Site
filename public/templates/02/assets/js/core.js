@@ -5,6 +5,7 @@
 require('../scss/screen.scss');
 require('../scss/print.scss');
 
+require('../../../../../node_modules/font-awesome/scss/font-awesome.scss');
 
 /**
  * Core Javascript/Jquery functionality

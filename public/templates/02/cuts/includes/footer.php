@@ -16,17 +16,17 @@
                 <div class="item col-md-6 col-xs-12 col-hs-24" data-height-group="2">
                     <h3 class="heading">Social Links</h3>
                     <ul class="social list-unstyled list-inline">
-                        <li><a href="#"><i class="sprite twitter"></i></a></li>
-                        <li><a href="#"><i class="sprite facebook"></i></a></li>
-                        <li><a href="#"><i class="sprite google-plus"></i></a></li>
-                        <li><a href="#"><i class="sprite pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
                     </ul>
                 </div>
                 <div class="item col-md-6 col-xs-12 col-hs-24" data-height-group="2">
                     <h3 class="heading">Newsletter</h3>
                     <form action="" class="form newsletter">
                         <input type="email" name="email" placeholder="Enter your email"/>
-                        <button type="submit" class="submit"><i class="sprite play"></i></button>
+                        <button type="submit" class="btn submit"><i class="fa fa-play"></i></button>
                     </form>
                 </div>
             </div>
@@ -53,4 +53,3 @@
         </div>
     </div>
 </div>
-

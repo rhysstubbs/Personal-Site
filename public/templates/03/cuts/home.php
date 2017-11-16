@@ -4,7 +4,6 @@
         <div class="row">
             <div class="col-xs-24">
                 <div class="homepage-slider">
-
                     <div class="slides hidden-hs">
                         <img src="http://placehold.it/1175x500&text=Slide+1" class="hidden-hs"/>
                         <div class="slide-overlay">
@@ -15,7 +14,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="slides hidden-hs">
                         <img src="http://placehold.it/1175x500&text=Slide+3" class="hidden-hs"/>
                         <div class="slide-overlay">
@@ -26,7 +24,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="slides hidden-hs">
                         <img src="http://placehold.it/1175x500&text=Slide+3" class="hidden-hs"/>
                         <div class="slide-overlay">
@@ -37,19 +34,25 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="body container pad-top pad-bot">
-        <div class="block-heading">
-            <div>
-                <h3 class="heading">Three column layout</h3>
+    <section class="container">
+        <div class="row">
+            <div class="col-xs-24">
+                <div class="block-heading">
+                    <div>
+                        <h3 class="heading">Three column layout</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="body-top row no-pad">
+    </section>
+
+    <section class="container">
+        <div class="row">
             <div class="item-list">
                 <a href="#" class="item col-sm-8 col-xs-12">
                     <figure>
@@ -113,12 +116,22 @@
                 </a>
             </div>
         </div>
-        <div class="block-heading">
-            <div>
-                <h3 class="heading">Four column layout</h3>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-xs-24">
+                <div class="block-heading">
+                    <div>
+                        <h3 class="heading">Four column layout</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="body-middle row no-pad">
+    </section>
+
+    <section class="container">
+        <div class="row">
             <div class="item-list">
                 <a href="#" class="item col-sm-6 col-xs-12">
                     <figure>
@@ -153,7 +166,7 @@
                     </figure>
                 </a>
             </div>
-        </div> <!-- body-middle -->
-    </section> <!-- outer -->
+        </div>
+    </section>
 
 <?php include 'includes/footer.php' ?>
